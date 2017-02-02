@@ -1,5 +1,9 @@
 ﻿using System;
 public class Solution {
+    public static long gcd(long a, long b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
     public static void Main(string[] args) {
         long a = 0, b = 0, x = 0, y = 0;
         int n = int.Parse(Console.ReadLine());
@@ -11,7 +15,7 @@ public class Solution {
             x = long.Parse(arr[2]);
             y = long.Parse(arr[3]);
 
-            Console.WriteLine(Math.Abs(x - a) % b == 0 && (b == y || Math.Abs(y - a) % b == 0) ? "YES" : "NO");
+            Console.WriteLine(gcd(a, b) == gcd(x, y) ? "YES" : "NO");
         }
     }
 }
