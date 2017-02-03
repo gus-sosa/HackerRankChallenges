@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PossiblePath", "PossiblePat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingTowns", "ConnectingTowns\ConnectingTowns.csproj", "{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SummingTheNseries", "SummingTheNseries\SummingTheNseries.pyproj", "{B0AE7837-4C94-41C5-8C3D-C83B803F2FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AE7837-4C94-41C5-8C3D-C83B803F2FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AE7837-4C94-41C5-8C3D-C83B803F2FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
