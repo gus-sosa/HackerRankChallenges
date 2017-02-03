@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PossiblePath", "PossiblePath\PossiblePath.csproj", "{A63D2CF1-246F-4044-8645-117311F5F2B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingTowns", "ConnectingTowns\ConnectingTowns.csproj", "{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A63D2CF1-246F-4044-8645-117311F5F2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A63D2CF1-246F-4044-8645-117311F5F2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A63D2CF1-246F-4044-8645-117311F5F2B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CE0FFE-E011-4CA8-A443-8EC6F813CADC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
