@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RookieRank2", "RookieRank2"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigratoryBirds", "MigratoryBirds\MigratoryBirds.csproj", "{F56E4C01-8D49-42F9-A111-63C2D3200A88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimum Absolute Difference in an Array", "Minimum Absolute Difference in an Array\Minimum Absolute Difference in an Array.csproj", "{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,11 +35,16 @@ Global
 		{F56E4C01-8D49-42F9-A111-63C2D3200A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F56E4C01-8D49-42F9-A111-63C2D3200A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F56E4C01-8D49-42F9-A111-63C2D3200A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F56E4C01-8D49-42F9-A111-63C2D3200A88} = {11805F6D-3D2F-472D-A3C8-56ED4302D10E}
+		{E7AA4DC8-349E-4BAC-91BD-7D64E22FCF64} = {11805F6D-3D2F-472D-A3C8-56ED4302D10E}
 	EndGlobalSection
 EndGlobal
