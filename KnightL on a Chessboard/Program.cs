@@ -30,7 +30,7 @@ class Solution {
                 if (nextStep.Row == n - 1 && nextStep.Col == n - 1) {
                     return countNextSteps;
                 }
-                if (matrix[nextStep.Row, nextStep.Col] >= countNextSteps) {
+                if (matrix[nextStep.Row, nextStep.Col] > countNextSteps) {
                     matrix[nextStep.Row, nextStep.Col] = countNextSteps;
                     queue.Enqueue(nextStep);
                 }
