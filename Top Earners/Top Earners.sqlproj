@@ -64,5 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SampleData.sql" />
+    <None Include="Solution.sql" />
   </ItemGroup>
 </Project>
