@@ -58,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Queries" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Company.sql" />
@@ -68,5 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SampleData.sql" />
+    <None Include="Queries\Solution.sql" />
   </ItemGroup>
 </Project>
