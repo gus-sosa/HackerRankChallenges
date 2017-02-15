@@ -25,6 +25,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Average Population of Each 
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "New Companies", "New Companies\New Companies.sqlproj", "{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "The Blunder", "The Blunder\The Blunder.sqlproj", "{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,12 @@ Global
 		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +88,6 @@ Global
 		{43CE031E-FAAE-4718-85CF-F8ECA973D943} = {11805F6D-3D2F-472D-A3C8-56ED4302D10E}
 		{16AE0DCE-F0F9-4F90-A430-585F2A162975} = {37F44871-BAAC-445A-B341-8807982A067C}
 		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8} = {37F44871-BAAC-445A-B341-8807982A067C}
+		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43} = {37F44871-BAAC-445A-B341-8807982A067C}
 	EndGlobalSection
 EndGlobal
