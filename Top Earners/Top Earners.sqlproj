@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>The_Blunder</Name>
+    <Name>Top_Earners</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{f3a3145e-f3cb-4c4b-818f-67f7afb2fe43}</ProjectGuid>
+    <ProjectGuid>{b22e7da4-9a5c-4c24-a7ce-a9e0e5b7f3e3}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>The_Blunder</RootNamespace>
-    <AssemblyName>The_Blunder</AssemblyName>
+    <RootNamespace>Top_Earners</RootNamespace>
+    <AssemblyName>Top_Earners</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -60,10 +60,9 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\EMPLOYEES.sql" />
+    <Build Include="Tables\Employee.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SampleData.sql" />
-    <None Include="Solution.sql" />
   </ItemGroup>
 </Project>
