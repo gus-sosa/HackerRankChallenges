@@ -1,0 +1,1 @@
+﻿select CAST(round((abs(max(lat_n) - max(long_W)) + abs(min(lat_N) - min(long_W))), 4) AS DECIMAL(9,4)) from station;
