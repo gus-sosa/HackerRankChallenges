@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{37F44871-BAA
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Average Population of Each Continent", "Average Population of Each Continent\Average Population of Each Continent.sqlproj", "{16AE0DCE-F0F9-4F90-A430-585F2A162975}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "New Companies", "New Companies\New Companies.sqlproj", "{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,12 @@ Global
 		{16AE0DCE-F0F9-4F90-A430-585F2A162975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16AE0DCE-F0F9-4F90-A430-585F2A162975}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16AE0DCE-F0F9-4F90-A430-585F2A162975}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +79,6 @@ Global
 		{9A5B5B31-6390-4E2D-A978-4074E81FC0B3} = {11805F6D-3D2F-472D-A3C8-56ED4302D10E}
 		{43CE031E-FAAE-4718-85CF-F8ECA973D943} = {11805F6D-3D2F-472D-A3C8-56ED4302D10E}
 		{16AE0DCE-F0F9-4F90-A430-585F2A162975} = {37F44871-BAAC-445A-B341-8807982A067C}
+		{94B4DD84-6D10-49BA-8453-5C126AD0D9E8} = {37F44871-BAAC-445A-B341-8807982A067C}
 	EndGlobalSection
 EndGlobal
