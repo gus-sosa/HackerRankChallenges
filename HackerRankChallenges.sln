@@ -31,6 +31,12 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Top Earners", "Top Earners\
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Weather Observation Station 18", "Weather Observation Station 18\Weather Observation Station 18.sqlproj", "{DF0710B8-A1B2-42F4-B812-D62116398C65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cracking the Coding Interview", "Cracking the Coding Interview", "{9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftRotation", "LeftRotation\LeftRotation.csproj", "{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Making Anagrams", "Making Anagrams\Making Anagrams.csproj", "{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +99,14 @@ Global
 		{DF0710B8-A1B2-42F4-B812-D62116398C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0710B8-A1B2-42F4-B812-D62116398C65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF0710B8-A1B2-42F4-B812-D62116398C65}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,5 +121,7 @@ Global
 		{F3A3145E-F3CB-4C4B-818F-67F7AFB2FE43} = {37F44871-BAAC-445A-B341-8807982A067C}
 		{B22E7DA4-9A5C-4C24-A7CE-A9E0E5B7F3E3} = {37F44871-BAAC-445A-B341-8807982A067C}
 		{DF0710B8-A1B2-42F4-B812-D62116398C65} = {37F44871-BAAC-445A-B341-8807982A067C}
+		{45CE1AD1-2DA0-43DF-B13C-7B43D48C8449} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
+		{765245F0-0CDF-4AE4-BC6E-DA510C79EA3E} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
 	EndGlobalSection
 EndGlobal
