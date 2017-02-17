@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A Tale of Two Stacks", "A T
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Is This a Binary Search Tree", "Is This a Binary Search Tree\Is This a Binary Search Tree.pyproj", "{ED0C9D2C-4B1B-44F6-85E0-BF61F8719C9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find the Running Median", "Find the Running Median\Find the Running Median.csproj", "{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,18 @@ Global
 		{ED0C9D2C-4B1B-44F6-85E0-BF61F8719C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0C9D2C-4B1B-44F6-85E0-BF61F8719C9C}.Release|x64.ActiveCfg = Release|Any CPU
 		{ED0C9D2C-4B1B-44F6-85E0-BF61F8719C9C}.Release|x86.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x64.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x86.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x64.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x64.Build.0 = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,5 +256,6 @@ Global
 		{8856AAD0-B725-49D8-924F-1CFE6C8BAA92} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
 		{2E40E1B0-9C90-4D6F-9994-7470ED2870E0} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
 		{ED0C9D2C-4B1B-44F6-85E0-BF61F8719C9C} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
 	EndGlobalSection
 EndGlobal
