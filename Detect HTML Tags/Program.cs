@@ -8,17 +8,16 @@ class Solution
     {
         int n = int.Parse(Console.ReadLine());
         string input;
-        var regExp = new Regex("<\\s*([a-zA-Z]+)(?=(\\s|[a-zA-Z]|[a-zA-Z]\\s*=\\s*\".*\"|[a-zA-Z]\\s*=\\s*'.*')*(.*<\\s*\\/\\1|\\/)\\s*>)");
+        var regExp = new Regex("(?<=<\\s*)\\w+");
         var set = new SortedSet<string>();
         while (n-- > 0)
         {
             input = Console.ReadLine();
             foreach (Match match in regExp.Matches(input))
             {
-                string currentValue = match.Value.Replace("<", "").Trim();
-                if (!set.Contains(currentValue))
+                if (!set.Contains(match.Value))
                 {
-                    set.Add(currentValue);
+                    set.Add(match.Value);
                 }
             }
         }
