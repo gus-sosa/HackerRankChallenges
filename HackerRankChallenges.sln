@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valid PAN format", "Valid P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utopian Identification Number", "Utopian Identification Number\Utopian Identification Number.csproj", "{7A528E34-5B8C-49B7-B9EA-5BF50295C630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find the Running Median", "Find the Running Median\Find the Running Median.csproj", "{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -385,6 +387,18 @@ Global
 		{7A528E34-5B8C-49B7-B9EA-5BF50295C630}.Release|x64.Build.0 = Release|x64
 		{7A528E34-5B8C-49B7-B9EA-5BF50295C630}.Release|x86.ActiveCfg = Release|x86
 		{7A528E34-5B8C-49B7-B9EA-5BF50295C630}.Release|x86.Build.0 = Release|x86
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x64.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Debug|x86.Build.0 = Debug|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x64.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x64.Build.0 = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,5 +431,6 @@ Global
 		{AC71943F-2E76-4FC1-93D3-D6B1F4224EC3} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
 		{6C0C69A4-658C-4777-8F4A-9D9B0E36C85A} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
 		{7A528E34-5B8C-49B7-B9EA-5BF50295C630} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
+		{89E46990-2E05-40C8-B1EC-E9EC8E1F7BF7} = {9D1FB830-CBB2-4F63-A7BC-6B0936CDCDB8}
 	EndGlobalSection
 EndGlobal
