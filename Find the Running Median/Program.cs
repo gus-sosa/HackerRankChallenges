@@ -1,87 +1,128 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
-class Solution {
-    private static void Swap<T>(ref T v1, ref T v2) {
-        T tmp = v1;
-        v1 = v2;
-        v2 = tmp;
+class MinHeap<T> where T : IComparable
+{
+    List<T> elements;
+
+    public MinHeap()
+    {
+        elements = new List<T>();
     }
 
-    private static void HeapifyUp(int[] arr, int index) {
-        int parent = (index - 1) / 2;
-        while (parent >= 0 && arr[parent] > arr[index]) {
-            Swap(ref arr[parent], ref arr[index]);
-            index = parent;
-            parent = (index - 2) / 2;
+    public MinHeap(int capacity)
+    {
+        elements = new List<T>(capacity);
+    }
+
+    public void Add(T item)
+    {
+        elements.Add(item);
+        Heapify();
+    }
+
+    public void Delete(T item)
+    {
+        int i = elements.IndexOf(item);
+        int last = elements.Count - 1;
+
+        elements[i] = elements[last];
+        elements.RemoveAt(last);
+        Heapify();
+    }
+
+    public T Top
+    {
+        get
+        {
+            if (elements.Count == 0)
+            {
+                throw new InvalidOperationException("The heap is empty");
+            }
+            return elements[0];
         }
     }
 
-    private static void HeapifyDown(int[] arr, ref int length) {
-        arr[0] = arr[--length];
-        int index = 0, leftChildIndex = 1, indexToSwap, rightChildIndex;
-        while (leftChildIndex < length) {
-            indexToSwap = leftChildIndex;
-            rightChildIndex = 2 * index + 2;
-            if (rightChildIndex < length && arr[rightChildIndex] < arr[leftChildIndex]) {
-                indexToSwap = rightChildIndex;
-            }
+    public int Count
+    {
+        get { return elements.Count; }
+    }
 
-            if (arr[index] <= arr[indexToSwap]) {
-                return;
-            }
+    public T PopMin()
+    {
+        if (elements.Count > 0)
+        {
+            T item = elements[0];
+            Delete(item);
+            return item;
+        }
 
-            Swap(ref arr[index], ref arr[indexToSwap]);
-            index = indexToSwap;
-            leftChildIndex = 2 * index + 1;
+        throw new InvalidOperationException("The heap is empty");
+    }
+
+    public void Heapify()
+    {
+        for (int i = elements.Count - 1; i > 0; i--)
+        {
+            int parentPosition = (i + 1) / 2 - 1;
+            parentPosition = parentPosition >= 0 ? parentPosition : 0;
+
+            if (elements[parentPosition].CompareTo(elements[i]) > 0)
+            {
+                T tmp = elements[parentPosition];
+                elements[parentPosition] = elements[i];
+                elements[i] = tmp;
+            }
         }
     }
 
-    private static void InsertInHeap(int[] arr, ref int length, int num) {
-        arr[length] = num;
-        HeapifyUp(arr, length++);
-    }
 
-    static void Main(String[] args) {
+}
+
+class Solution
+{
+    static void Main(String[] args)
+    {
+        int count = 0;
         int n = Convert.ToInt32(Console.ReadLine());
-        int sizeHeap = n / 2 + 1;
-        int[] leftHalf = new int[sizeHeap];
-        int lengthLeftHalf = 0;
-        int[] rightHalf = new int[sizeHeap];
-        int lengthRightHalf = 0;
-        for (int a_i = 0; a_i < n; a_i++) {
+        var minHeap = new MinHeap<int>(n);
+        var maxHeap = new MinHeap<int>(n);
+        for (int a_i = 0; a_i < n; a_i++)
+        {
             int currentNum = int.Parse(Console.ReadLine());
-            if (lengthLeftHalf == 0) {
-                InsertInHeap(leftHalf, ref lengthLeftHalf, -currentNum);
-            } else {
-                if (lengthLeftHalf > lengthRightHalf) {
-                    if (currentNum > -leftHalf[0]) {
-                        InsertInHeap(rightHalf, ref lengthRightHalf, currentNum);
-                    } else {
-                        InsertInHeap(rightHalf, ref lengthRightHalf, -leftHalf[0]);
-                        HeapifyDown(leftHalf, ref lengthLeftHalf);
-                        InsertInHeap(leftHalf, ref lengthLeftHalf, -currentNum);
-                    }
-                } else {
-                    if (currentNum < rightHalf[0]) {
-                        InsertInHeap(leftHalf, ref lengthLeftHalf, -currentNum);
-                    } else {
-                        InsertInHeap(leftHalf, ref lengthLeftHalf, -rightHalf[0]);
-                        HeapifyDown(rightHalf, ref lengthRightHalf);
-                        InsertInHeap(rightHalf, ref lengthRightHalf, currentNum);
-                    }
+            if (count == 0 || minHeap.Count == 0)
+            {
+                maxHeap.Add(-currentNum);
+            }
+            else
+            {//minHeap.Coun!=0
+                if (currentNum < minHeap.Top)
+                {
+                    maxHeap.Add(-currentNum);
+                }
+                else
+                {
+                    minHeap.Add(currentNum);
                 }
             }
 
-            Console.WriteLine(GetMedian(leftHalf, rightHalf, lengthLeftHalf + lengthRightHalf).ToString("F1"));
+            //balance heaps
+            if (maxHeap.Count > minHeap.Count + 1)
+                minHeap.Add(-maxHeap.PopMin());
+
+            if (minHeap.Count > maxHeap.Count + 1)
+                maxHeap.Add(-minHeap.PopMin());
+
+            count++;
+            Console.WriteLine(GetMedian(maxHeap, minHeap, count).ToString("F1"));
         }
     }
 
-    private static float GetMedian(int[] leftHalf, int[] rightHalf, int count) {
-        float result = -leftHalf[0] * 1f;
-        if (count % 2 == 0) {
-            result = (result + rightHalf[0]) / 2f;
-        }
-        return result;
+    private static float GetMedian(MinHeap<int> leftHalf, MinHeap<int> rightHalf, int count)
+    {
+        if (count % 2 == 0)
+            return (-leftHalf.Top + rightHalf.Top) / 2f;
+        else
+            return leftHalf.Count > rightHalf.Count ? -leftHalf.Top : rightHalf.Top;
     }
 }
