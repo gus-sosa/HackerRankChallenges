@@ -18,17 +18,44 @@ class MinHeap<T> where T : IComparable
     public void Add(T item)
     {
         elements.Add(item);
-        Heapify();
+        HeapifyUp();
     }
 
-    public void Delete(T item)
+    private void DeleteTop()
     {
-        int i = elements.IndexOf(item);
+        int i = 0;
         int last = elements.Count - 1;
 
         elements[i] = elements[last];
         elements.RemoveAt(last);
-        Heapify();
+        HeapifyDown();
+    }
+
+    private int LeftChild(int i)
+    {
+        return 2 * i + 1;
+    }
+
+    private int RightChild(int i)
+    {
+        return 2 * i + 2;
+    }
+
+    private void HeapifyDown()
+    {
+        for (int i = 0; LeftChild(i) < Count;)
+        {
+            int indexToSwap = LeftChild(i);
+            if (RightChild(i) < Count && elements[indexToSwap].CompareTo(elements[RightChild(i)]) > 0)
+            {
+                indexToSwap = RightChild(i);
+            }
+            if (elements[i].CompareTo(elements[indexToSwap]) <= 0)
+                break;
+
+            Swap(i, indexToSwap);
+            i = indexToSwap;
+        }
     }
 
     public T Top
@@ -52,31 +79,35 @@ class MinHeap<T> where T : IComparable
     {
         if (elements.Count > 0)
         {
-            T item = elements[0];
-            Delete(item);
+            T item = Top;
+            DeleteTop();
             return item;
         }
 
         throw new InvalidOperationException("The heap is empty");
     }
 
-    public void Heapify()
+    private void HeapifyUp()
     {
-        for (int i = elements.Count - 1; i > 0; i--)
+        for (int i = elements.Count - 1; i > 0;)
         {
             int parentPosition = (i + 1) / 2 - 1;
             parentPosition = parentPosition >= 0 ? parentPosition : 0;
 
             if (elements[parentPosition].CompareTo(elements[i]) > 0)
             {
-                T tmp = elements[parentPosition];
-                elements[parentPosition] = elements[i];
-                elements[i] = tmp;
+                Swap(i, parentPosition);
             }
+            i = parentPosition;
         }
     }
 
-
+    private void Swap(int pos1, int pos2)
+    {
+        T tmp = elements[pos2];
+        elements[pos2] = elements[pos1];
+        elements[pos1] = tmp;
+    }
 }
 
 class Solution
