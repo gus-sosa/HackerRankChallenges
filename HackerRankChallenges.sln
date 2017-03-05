@@ -95,6 +95,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Split the Phone Numbers", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detect HTML Attributes", "Detect HTML Attributes\Detect HTML Attributes.csproj", "{8326FB88-26F7-44A3-9CCD-2496004DAFA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheBritishAmericanStyleSpelling", "TheBritishAmericanStyleSpelling\TheBritishAmericanStyleSpelling.csproj", "{21A26B06-32B9-4390-89B7-D2558E94A54B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -557,6 +559,18 @@ Global
 		{8326FB88-26F7-44A3-9CCD-2496004DAFA7}.Release|x64.Build.0 = Release|Any CPU
 		{8326FB88-26F7-44A3-9CCD-2496004DAFA7}.Release|x86.ActiveCfg = Release|Any CPU
 		{8326FB88-26F7-44A3-9CCD-2496004DAFA7}.Release|x86.Build.0 = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|x64.Build.0 = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Debug|x86.Build.0 = Debug|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|x64.ActiveCfg = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|x64.Build.0 = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|x86.ActiveCfg = Release|Any CPU
+		{21A26B06-32B9-4390-89B7-D2558E94A54B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -600,5 +614,6 @@ Global
 		{8E001B86-A335-421C-853F-1B99B7B0088C} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
 		{E459AC9C-950B-43F2-BD52-444FABDED54C} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
 		{8326FB88-26F7-44A3-9CCD-2496004DAFA7} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
+		{21A26B06-32B9-4390-89B7-D2558E94A54B} = {D56AE80B-09CA-4DA7-82E8-A78E15DDD65C}
 	EndGlobalSection
 EndGlobal
