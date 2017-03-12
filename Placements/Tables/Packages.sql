@@ -1,0 +1,5 @@
+﻿CREATE TABLE Packages
+(
+	Id INT NOT NULL PRIMARY KEY,
+	Salary INT NOT NULL
+)
