@@ -244,3 +244,5 @@ ModelManifest.xml
 *.jfm
 
 *.sqlproj
+
+Comparator/\.idea/
