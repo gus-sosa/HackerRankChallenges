@@ -1,0 +1,5 @@
+﻿CREATE TABLE Friends
+(
+	Id INT NOT NULL PRIMARY KEY,
+	Friend_ID INT NOT NULL
+)
