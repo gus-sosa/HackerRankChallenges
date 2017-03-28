@@ -117,6 +117,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Strings", "Strings", "{57F1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome Index", "Palindrome Index\Palindrome Index.csproj", "{7BB9C993-935A-4D6C-88D6-55892BD08622}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternating Characters", "Alternating Characters\Alternating Characters.csproj", "{20F284A0-9739-49B1-AB47-B165939BEEBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -693,6 +695,18 @@ Global
 		{7BB9C993-935A-4D6C-88D6-55892BD08622}.Release|x64.Build.0 = Release|Any CPU
 		{7BB9C993-935A-4D6C-88D6-55892BD08622}.Release|x86.ActiveCfg = Release|Any CPU
 		{7BB9C993-935A-4D6C-88D6-55892BD08622}.Release|x86.Build.0 = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|x64.Build.0 = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Debug|x86.Build.0 = Debug|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x64.ActiveCfg = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x64.Build.0 = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x86.ActiveCfg = Release|Any CPU
+		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -746,5 +760,6 @@ Global
 		{3458DA1D-76F4-4147-8A24-8615394480D4} = {BB1BCA7A-322B-4BD3-825A-B0EBE40D4B7F}
 		{57F150F4-7614-4656-887F-F02BAC57289F} = {864AC428-B6B0-436E-9557-00212A9C030D}
 		{7BB9C993-935A-4D6C-88D6-55892BD08622} = {57F150F4-7614-4656-887F-F02BAC57289F}
+		{20F284A0-9739-49B1-AB47-B165939BEEBD} = {57F150F4-7614-4656-887F-F02BAC57289F}
 	EndGlobalSection
 EndGlobal
