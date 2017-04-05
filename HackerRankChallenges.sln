@@ -119,6 +119,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome Index", "Palindr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternating Characters", "Alternating Characters\Alternating Characters.csproj", "{20F284A0-9739-49B1-AB47-B165939BEEBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagonalDifference", "DiagonalDifference\DiagonalDifference.csproj", "{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -707,6 +709,18 @@ Global
 		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x64.Build.0 = Release|Any CPU
 		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x86.ActiveCfg = Release|Any CPU
 		{20F284A0-9739-49B1-AB47-B165939BEEBD}.Release|x86.Build.0 = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|x64.Build.0 = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Debug|x86.Build.0 = Debug|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|x64.ActiveCfg = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|x64.Build.0 = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -761,5 +775,6 @@ Global
 		{57F150F4-7614-4656-887F-F02BAC57289F} = {864AC428-B6B0-436E-9557-00212A9C030D}
 		{7BB9C993-935A-4D6C-88D6-55892BD08622} = {57F150F4-7614-4656-887F-F02BAC57289F}
 		{20F284A0-9739-49B1-AB47-B165939BEEBD} = {57F150F4-7614-4656-887F-F02BAC57289F}
+		{C6C48AE6-970F-4B7C-8EEA-270D287FFEAB} = {BB1BCA7A-322B-4BD3-825A-B0EBE40D4B7F}
 	EndGlobalSection
 EndGlobal
