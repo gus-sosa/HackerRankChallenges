@@ -7,7 +7,7 @@
     <ProjectGuid>{925BC9E4-F462-410E-8D31-6E76200EC754}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Time_Conversion</RootNamespace>
-    <AssemblyName>Time_Conversion</AssemblyName>
+    <AssemblyName>Time Conversion</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
