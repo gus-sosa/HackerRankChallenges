@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MatrixLayerRotation
 {
@@ -46,53 +42,105 @@ namespace MatrixLayerRotation
             int row, col;
 
             //rotating first row
-            row = height - 1;
-            col = width - 1;
+            row = numLayerSkiped;
+            col = numLayerSkiped;
             for (int i = 0; i < width; i++, col++)
             {
                 int currentValue = matrix[row, col];
                 int x, y;
-                GetCoords(width, height, row, col, rot, out x, out y);
-                result[x + height - 1, y + width - 1] = currentValue;
+                GetCoords(width, height, 0, i, rot, out x, out y);
+                result[x + numLayerSkiped, y + numLayerSkiped] = currentValue;
             }
 
             //rotating last row
-            row = m - height - 1;
-            col = width - 1;
+            row = m - numLayerSkiped - 1;
+            col = numLayerSkiped;
             for (int i = 0; i < width; i++, col++)
             {
                 int currentValue = matrix[row, col];
                 int x, y;
-                GetCoords(width, height, row, col, rot, out x, out y);
-                result[x + height - 1, y + width - 1] = currentValue;
+                GetCoords(width, height, height - 1, i, rot, out x, out y);
+                result[x + numLayerSkiped, y + numLayerSkiped] = currentValue;
             }
 
             //rotating first column
-            row = height - 1;
-            col = width - 1;
+            row = numLayerSkiped;
+            col = numLayerSkiped;
             for (int i = 0; i < height; i++, row++)
             {
                 int currentValue = matrix[row, col];
                 int x, y;
-                GetCoords(width, height, row, col, rot, out x, out y);
-                result[x + height - 1, y + width - 1] = currentValue;
+                GetCoords(width, height, i, 0, rot, out x, out y);
+                result[x + numLayerSkiped, y + numLayerSkiped] = currentValue;
             }
 
             //rotation last column
-            row = height - 1;
-            col = n - width - 1;
+            row = numLayerSkiped;
+            col = n - numLayerSkiped - 1;
             for (int i = 0; i < height; i++, row++)
             {
                 int currentValue = matrix[row, col];
                 int x, y;
-                GetCoords(width, height, row, col, rot, out x, out y);
-                result[x + height - 1, y + width - 1] = currentValue;
+                GetCoords(width, height, i, width - 1, rot, out x, out y);
+                result[x + numLayerSkiped, y + numLayerSkiped] = currentValue;
             }
         }
 
         private static void GetCoords(int width, int height, int row, int col, int rot, out int x, out int y)
         {
-            throw new NotImplementedException();
+            x = row;
+            y = col;
+
+            while (rot > 0)
+            {
+                if (x == 0)//first row
+                    if (y >= rot)
+                    {
+                        y -= rot;
+                        rot = 0;
+                    }
+                    else
+                    {
+                        rot -= y;
+                        y = 0;
+                    }
+
+                if (y == 0)//first column
+                    if (height - x - 1 >= rot)
+                    {
+                        x += rot;
+                        rot = 0;
+                    }
+                    else
+                    {
+                        rot -= height - x - 1;
+                        x = height - 1;
+                    }
+
+                if (x == height - 1)//last row
+                    if (width - y - 1 >= rot)
+                    {
+                        y += rot;
+                        rot = 0;
+                    }
+                    else
+                    {
+                        rot -= width - y - 1;
+                        y = width - 1;
+                    }
+
+                if (y == width - 1)//last column
+                    if (x >= rot)
+                    {
+                        x -= rot;
+                        rot = 0;
+                    }
+                    else
+                    {
+                        rot -= x;
+                        x = 0;
+                    }
+            }
         }
 
         private static void Print(int[,] matrix)
