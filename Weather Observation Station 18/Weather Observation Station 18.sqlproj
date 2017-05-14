@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Average_Population_of_Each_Continent</Name>
+    <Name>Weather_Observation_Station_18</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{16ae0dce-f0f9-4f90-a430-585f2a162975}</ProjectGuid>
+    <ProjectGuid>{df0710b8-a1b2-42f4-b812-d62116398c65}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Average_Population_of_Each_Continent</RootNamespace>
-    <AssemblyName>Average_Population_of_Each_Continent</AssemblyName>
+    <RootNamespace>Weather_Observation_Station_18</RootNamespace>
+    <AssemblyName>Weather_Observation_Station_18</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -58,18 +58,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
-    <Folder Include="Queries" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\CITY.sql" />
+    <Build Include="Tables\STATION.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="Average Population of Each Continent.refactorlog" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Tables\COUNTRY.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Queries\GetContinentsAndAveragePopulation.sql" />
+    <None Include="Solution.sql" />
+    <None Include="SolutionTo19.sql" />
   </ItemGroup>
 </Project>
