@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Bigger_is_Greater
 {
@@ -12,37 +10,32 @@ namespace Bigger_is_Greater
             while (t-- > 0)
             {
                 string word = Console.ReadLine();
-                string bestWord = null;
-                foreach (string permutation in GetPermutations(word))
-                    if (permutation.CompareTo(word) > 0 && (bestWord == null || bestWord.CompareTo(permutation) > 0))
-                        bestWord = permutation;
-                Console.WriteLine(bestWord ?? "no answer");
+                Console.WriteLine(GetAnswer(word) ?? "no answer");
             }
         }
 
-        private static IEnumerable<string> GetPermutations(string word)
+        private static string GetAnswer(string word)
         {
-            var marked = new bool[word.Length];
-            var builder = new StringBuilder();
-            foreach (string permutation in GetPermutations(word, builder, marked))
-                yield return permutation;
-        }
+            char[] array = word.ToCharArray();
+            //computing next permutation
+            int i = array.Length - 1;
+            while (i > 0 && array[i - 1] >= array[i])
+                i--;
 
-        private static IEnumerable<string> GetPermutations(string word, StringBuilder builder, bool[] marked)
-        {
-            if (builder.Length == word.Length)
-                yield return builder.ToString();
-            else
-                for (int i = 0; i < marked.Length; i++)
-                    if (!marked[i])
-                    {
-                        marked[i] = true;
-                        builder.Append(word[i]);
-                        foreach (string permutation in GetPermutations(word, builder, marked))
-                            yield return permutation;
-                        marked[i] = false;
-                        builder.Remove(builder.Length - 1, 1);
-                    }
+            if (i <= 0)
+                return null;
+
+            int j = array.Length - 1;
+            while (array[j] <= array[i - 1])
+                j--;
+
+            //swap
+            char tmp = array[i - 1];
+            array[i - 1] = array[j];
+            array[j] = tmp;
+
+            Array.Reverse(array, i, array.Length - i);
+            return new string(array);
         }
     }
 }
