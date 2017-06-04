@@ -153,6 +153,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigger is Greater", "Bigger
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equalize the Array", "Equalize the Array\Equalize the Array.csproj", "{BA80FC30-513C-480D-B600-A0449C9E3CE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flatland Space Stations", "Flatland Space Stations\Flatland Space Stations.csproj", "{5E8DD115-48A3-4C74-8530-FE44816EC3E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -909,6 +911,18 @@ Global
 		{BA80FC30-513C-480D-B600-A0449C9E3CE6}.Release|x64.Build.0 = Release|Any CPU
 		{BA80FC30-513C-480D-B600-A0449C9E3CE6}.Release|x86.ActiveCfg = Release|Any CPU
 		{BA80FC30-513C-480D-B600-A0449C9E3CE6}.Release|x86.Build.0 = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|x64.Build.0 = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -980,5 +994,6 @@ Global
 		{BC54040F-F44E-49CC-9D7E-B00B31DC39E7} = {F7AD2D91-53C5-45B0-B70F-F715D40785AD}
 		{91CA4C82-E0E9-4DE3-9F8D-9C23D49798BB} = {B31F121B-C2CC-47B5-809D-15005FFC1D08}
 		{BA80FC30-513C-480D-B600-A0449C9E3CE6} = {B31F121B-C2CC-47B5-809D-15005FFC1D08}
+		{5E8DD115-48A3-4C74-8530-FE44816EC3E6} = {B31F121B-C2CC-47B5-809D-15005FFC1D08}
 	EndGlobalSection
 EndGlobal
