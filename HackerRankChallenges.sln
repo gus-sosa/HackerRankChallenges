@@ -175,6 +175,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram", "Anagram\Anagram.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and Anagrams", "Sherlock and Anagrams\Sherlock and Anagrams.csproj", "{76A063FD-336A-4717-878B-B6FE04454EA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game of Thrones - I", "Game of Thrones - I\Game of Thrones - I.csproj", "{CC28E899-434D-4071-B71F-FCE7FF600D6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1039,6 +1041,18 @@ Global
 		{76A063FD-336A-4717-878B-B6FE04454EA1}.Release|x64.Build.0 = Release|Any CPU
 		{76A063FD-336A-4717-878B-B6FE04454EA1}.Release|x86.ActiveCfg = Release|Any CPU
 		{76A063FD-336A-4717-878B-B6FE04454EA1}.Release|x86.Build.0 = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|x64.Build.0 = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Debug|x86.Build.0 = Debug|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|x64.ActiveCfg = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|x64.Build.0 = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|x86.ActiveCfg = Release|Any CPU
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1121,5 +1135,6 @@ Global
 		{E7E5C3AB-BBE5-478D-B542-01AE35192408} = {2F8807A2-5E55-4CB7-9797-2E46E6FA6569}
 		{88B4585C-459B-4E94-B168-1693F4A5ECE8} = {57F150F4-7614-4656-887F-F02BAC57289F}
 		{76A063FD-336A-4717-878B-B6FE04454EA1} = {57F150F4-7614-4656-887F-F02BAC57289F}
+		{CC28E899-434D-4071-B71F-FCE7FF600D6A} = {57F150F4-7614-4656-887F-F02BAC57289F}
 	EndGlobalSection
 EndGlobal
