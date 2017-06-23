@@ -5,34 +5,41 @@ namespace IsFibo
 {
     class Program
     {
-        static HashSet<ulong> fiboTable = new HashSet<ulong>();
+        static ulong[] table;
         static void Main(string[] args)
         {
-            BuildFiboTable();
+            PreCompute();
 
             int t = int.Parse(Console.ReadLine());
             ulong n;
             while (t-- > 0)
             {
                 n = ulong.Parse(Console.ReadLine());
-                Console.WriteLine(fiboTable.Contains(n) ? "IsFibo" : "IsNotFibo");
+                Console.WriteLine(IsFibo(n) ? "IsFibo" : "IsNotFibo");
             }
         }
 
-        private static void BuildFiboTable()
+        private static bool IsFibo(ulong n)
         {
-            fiboTable.Add(0);
-            fiboTable.Add(1);
+            int index = Array.BinarySearch(table, n);
+            return index > 0;
+        }
+
+        private static void PreCompute()
+        {
+            var list = new List<ulong>() { 0, 1 };
+            ulong max = Convert.ToUInt64(Math.Pow(10, 10));
             ulong a = 0;
             ulong b = 1;
-            ulong len = (ulong)Math.Pow(10, 10);
-            for (ulong i = 0; i < len; i++)
+            ulong current;
+            do
             {
-                ulong result = a + b;
+                current = a + b;
+                list.Add(current);
                 a = b;
-                b = result;
-                fiboTable.Add(result);
-            }
+                b = current;
+            } while (current <= max);
+            table = list.ToArray();
         }
     }
 }
