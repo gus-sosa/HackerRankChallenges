@@ -1,21 +1,30 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
-namespace IsFibo
+class Solution
 {
-    class Program
+    static void Main(String[] args)
     {
-        static void Main(string[] args)
+        int n = int.Parse(Console.ReadLine());
+
+        HashSet<long> fibo = new HashSet<long>();
+        fibo.Add(0);
+        fibo.Add(1);
+
+        long p1 = 0, p2 = 1;
+        while (p2 < 10000000001)
         {
-            int t = int.Parse(Console.ReadLine());
-            ulong n;
-            while (t-- > 0)
-            {
-                n = ulong.Parse(Console.ReadLine());
-                ulong tmp;
-                ulong _5nnPlus4 = 5 * n * n + 4;
-                ulong _5nnMinus4 = 5 * n * n - 4;
-                Console.WriteLine((ulong)((double)Math.Sqrt(_5nnMinus4)) == _5nnMinus4 || (ulong)((double)Math.Sqrt(_5nnPlus4)) == _5nnPlus4 ? "IsFibo" : "IsNotFibo");
-            }
+            long p = p1 + p2;
+            p1 = p2;
+            p2 = p;
+            fibo.Add(p);
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            long t = long.Parse(Console.ReadLine());
+            Console.WriteLine(fibo.Contains(t) ? "IsFibo" : "IsNotFibo");
         }
     }
 }
