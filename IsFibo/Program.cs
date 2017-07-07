@@ -1,30 +1,34 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-
 class Solution
 {
     static void Main(String[] args)
     {
-        int n = int.Parse(Console.ReadLine());
-
-        HashSet<long> fibo = new HashSet<long>();
-        fibo.Add(0);
-        fibo.Add(1);
-
-        long p1 = 0, p2 = 1;
-        while (p2 < 10000000001)
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+        int iTestCases = 0;
+        double number = 0;
+        iTestCases = Convert.ToInt32(Console.ReadLine().ToString().TrimEnd());
+        for (int i = 0; i < iTestCases; i++)
         {
-            long p = p1 + p2;
-            p1 = p2;
-            p2 = p;
-            fibo.Add(p);
+            number = Convert.ToDouble(Console.ReadLine().ToString().TrimEnd());
+            Console.WriteLine(IsFib(number));
         }
+    }
 
-        for (int i = 0; i < n; i++)
-        {
-            long t = long.Parse(Console.ReadLine());
-            Console.WriteLine(fibo.Contains(t) ? "IsFibo" : "IsNotFibo");
-        }
+    static string IsFib(double n)
+    {
+        if (IsSquare(5 * n * n + 4) || IsSquare(5 * n * n - 4))
+            return "IsFibo";
+        else
+            return "IsNotFibo";
+    }
+
+    static bool IsSquare(double n)
+    {
+        double root = Math.Sqrt(n);
+        Int64 iroot = Convert.ToInt64(root);
+        if (root - iroot == 0)
+            return true;
+        else
+            return false;
     }
 }
