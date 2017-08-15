@@ -209,6 +209,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dijkstra_Shortest Reach 2",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Super Reduced String", "Super Reduced String\Super Reduced String.csproj", "{487EA9D7-9B2E-4674-8236-68F7143AC6E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beautiful Binary String", "Beautiful Binary String\Beautiful Binary String.csproj", "{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1217,6 +1219,18 @@ Global
 		{487EA9D7-9B2E-4674-8236-68F7143AC6E9}.Release|x64.Build.0 = Release|Any CPU
 		{487EA9D7-9B2E-4674-8236-68F7143AC6E9}.Release|x86.ActiveCfg = Release|Any CPU
 		{487EA9D7-9B2E-4674-8236-68F7143AC6E9}.Release|x86.Build.0 = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|x64.Build.0 = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Debug|x86.Build.0 = Debug|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|x64.ActiveCfg = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|x64.Build.0 = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|x86.ActiveCfg = Release|Any CPU
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1316,5 +1330,6 @@ Global
 		{83074AFD-3327-4DF7-A48E-D2A383B33312} = {C749EAAE-5B14-41EC-9DE5-697F3354E253}
 		{CE98501B-F9A0-4DF4-8FE3-AB616C9407DC} = {C749EAAE-5B14-41EC-9DE5-697F3354E253}
 		{487EA9D7-9B2E-4674-8236-68F7143AC6E9} = {57F150F4-7614-4656-887F-F02BAC57289F}
+		{6FE7BE14-89A6-4B97-ADD0-916F0BF163ED} = {57F150F4-7614-4656-887F-F02BAC57289F}
 	EndGlobalSection
 EndGlobal
