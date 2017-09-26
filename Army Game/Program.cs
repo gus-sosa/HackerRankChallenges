@@ -30,7 +30,7 @@ namespace Army_Game
             int countRowSquare = n / 2;
             int countColSquare = m / 2;
 
-            return countRowSquare * countRowSquare + sol(n - countRowSquare * 2, m) + sol(n, m - countColSquare * 2) - (n % 2 != 0 && m % 2 != 0 ? 1 : 0);
+            return countRowSquare * countColSquare + sol(n - countRowSquare * 2, m) + sol(n, m - countColSquare * 2) - (n % 2 != 0 && m % 2 != 0 ? 1 : 0);
         }
     }
 }
