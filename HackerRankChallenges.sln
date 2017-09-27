@@ -135,9 +135,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThePowerSum", "ThePowerSum\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementation", "Implementation", "{B31F121B-C2CC-47B5-809D-15005FFC1D08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and Squares", "Sherlock and Squares\Sherlock and Squares.csproj", "{BAAA3511-16AE-45B1-B3DB-B4D2B4654897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sherlock and Squares", "Sherlock and Squares\Sherlock and Squares.csproj", "{BAAA3511-16AE-45B1-B3DB-B4D2B4654897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cut_The_Sticks", "Cut_The_Sticks\Cut_The_Sticks.csproj", "{6C108B36-5849-4BA4-A643-A6EBBF07DDDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cut_The_Sticks", "Cut_The_Sticks\Cut_The_Sticks.csproj", "{6C108B36-5849-4BA4-A643-A6EBBF07DDDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixLayerRotation", "MatrixLayerRotation\MatrixLayerRotation.csproj", "{FA76179C-7259-4988-9626-5FF47F87C852}"
 EndProject
@@ -199,7 +199,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsFibo", "IsFibo\IsFibo.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicProgramming", "DynamicProgramming", "{31CE93D3-BAE6-4290-B05D-18280021A623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci Modified", "Fibonacci Modified\Fibonacci Modified.csproj", "{82C8E428-1090-47DF-8FAB-2A30762E2531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibonacci Modified", "Fibonacci Modified\Fibonacci Modified.csproj", "{82C8E428-1090-47DF-8FAB-2A30762E2531}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graph", "Graph", "{C749EAAE-5B14-41EC-9DE5-697F3354E253}"
 EndProject
@@ -226,6 +226,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Army Game", "Army Game\Army Game.csproj", "{F488CC84-B001-49FF-91C8-93217521B7AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leonardo's Prime Factors", "Leonardo's Prime Factors\Leonardo's Prime Factors.csproj", "{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cutting Paper Squares", "Cutting Paper Squares\Cutting Paper Squares.csproj", "{872A03DA-83F9-46A1-9A7D-F04065055FCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1343,6 +1345,18 @@ Global
 		{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602}.Release|x64.Build.0 = Release|Any CPU
 		{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602}.Release|x86.ActiveCfg = Release|Any CPU
 		{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602}.Release|x86.Build.0 = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|x64.Build.0 = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x64.ActiveCfg = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x64.Build.0 = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1451,5 +1465,6 @@ Global
 		{6070045B-78CD-42E5-B26D-E2A26517AD20} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{F488CC84-B001-49FF-91C8-93217521B7AA} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
+		{872A03DA-83F9-46A1-9A7D-F04065055FCB} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 	EndGlobalSection
 EndGlobal
