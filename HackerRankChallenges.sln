@@ -229,6 +229,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leonardo's Prime Factors", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cutting Paper Squares", "Cutting Paper Squares\Cutting Paper Squares.csproj", "{872A03DA-83F9-46A1-9A7D-F04065055FCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sherlock and Moving Tiles", "Sherlock and Moving Tiles\Sherlock and Moving Tiles.csproj", "{BB3C7347-33FD-4446-86C4-19D4C802458A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1357,6 +1359,18 @@ Global
 		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x64.Build.0 = Release|Any CPU
 		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x86.ActiveCfg = Release|Any CPU
 		{872A03DA-83F9-46A1-9A7D-F04065055FCB}.Release|x86.Build.0 = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|x64.Build.0 = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Debug|x86.Build.0 = Debug|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|x64.ActiveCfg = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|x64.Build.0 = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB3C7347-33FD-4446-86C4-19D4C802458A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1466,5 +1480,6 @@ Global
 		{F488CC84-B001-49FF-91C8-93217521B7AA} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{0A0C9BB4-B3F2-467D-8BC7-1011A13D1602} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{872A03DA-83F9-46A1-9A7D-F04065055FCB} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
+		{BB3C7347-33FD-4446-86C4-19D4C802458A} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 	EndGlobalSection
 EndGlobal
