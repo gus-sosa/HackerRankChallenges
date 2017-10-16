@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26424.2
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RookieRank2", "RookieRank2", "{11805F6D-3D2F-472D-A3C8-56ED4302D10E}"
 EndProject
@@ -242,6 +242,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeGrid", "StrangeGrid\StrangeGrid.csproj", "{6BC032D9-4751-49BF-AF09-0AE39CDE7749}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diwali Lights", "Diwali Lights\Diwali Lights.pyproj", "{F54B5B5A-1371-48B4-8FF2-6273346D5CB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Special Multiple", "Special Multiple\Special Multiple.csproj", "{B97EA49F-9990-433A-99DB-97177EE8F2BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1449,6 +1451,18 @@ Global
 		{F54B5B5A-1371-48B4-8FF2-6273346D5CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F54B5B5A-1371-48B4-8FF2-6273346D5CB5}.Release|x64.ActiveCfg = Release|Any CPU
 		{F54B5B5A-1371-48B4-8FF2-6273346D5CB5}.Release|x86.ActiveCfg = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x64.Build.0 = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1565,5 +1579,6 @@ Global
 		{4F526AB1-A47F-4AB5-AFB5-EE0F8665577C} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{6BC032D9-4751-49BF-AF09-0AE39CDE7749} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{F54B5B5A-1371-48B4-8FF2-6273346D5CB5} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
+		{B97EA49F-9990-433A-99DB-97177EE8F2BF} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 	EndGlobalSection
 EndGlobal
