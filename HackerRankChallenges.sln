@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RookieRank2", "RookieRank2", "{11805F6D-3D2F-472D-A3C8-56ED4302D10E}"
 EndProject
@@ -244,6 +244,8 @@ EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diwali Lights", "Diwali Lights\Diwali Lights.pyproj", "{F54B5B5A-1371-48B4-8FF2-6273346D5CB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Special Multiple", "Special Multiple\Special Multiple.csproj", "{B97EA49F-9990-433A-99DB-97177EE8F2BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisible Sum Pairs", "Divisible Sum Pairs\Divisible Sum Pairs.csproj", "{82738782-822C-40A3-8B8F-6CF392E3478D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1463,6 +1465,18 @@ Global
 		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x64.Build.0 = Release|Any CPU
 		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{B97EA49F-9990-433A-99DB-97177EE8F2BF}.Release|x86.Build.0 = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|x64.Build.0 = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Debug|x86.Build.0 = Debug|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|x64.ActiveCfg = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|x64.Build.0 = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|x86.ActiveCfg = Release|Any CPU
+		{82738782-822C-40A3-8B8F-6CF392E3478D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1580,5 +1594,9 @@ Global
 		{6BC032D9-4751-49BF-AF09-0AE39CDE7749} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{F54B5B5A-1371-48B4-8FF2-6273346D5CB5} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
 		{B97EA49F-9990-433A-99DB-97177EE8F2BF} = {9A454563-A548-4063-8A92-6C66BEBD9B21}
+		{82738782-822C-40A3-8B8F-6CF392E3478D} = {B31F121B-C2CC-47B5-809D-15005FFC1D08}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
 	EndGlobalSection
 EndGlobal
