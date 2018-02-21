@@ -16,16 +16,12 @@ namespace Sherlock_and_Permutations
             {
                 string[] tokens = Console.ReadLine().Split();
                 ulong n = ulong.Parse(tokens[0]);
-                ulong m = ulong.Parse(tokens[1]);
+                ulong m = ulong.Parse(tokens[1]) - 1;
                 Console.WriteLine(GetPermutations(n, m));
             }
         }
 
-        private static ulong GetPermutations(ulong n, ulong m)
-        {
-            m--;
-            return (fact[n + m] / (fact[n] * fact[m])) % mod1;
-        }
+        private static ulong GetPermutations(ulong n, ulong m) { return (fact[n + m] / (fact[n] * fact[m])) % mod1; }
 
         private static void PreComputeFactorials()
         {
