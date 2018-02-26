@@ -22,7 +22,23 @@ namespace Sherlock_and_Permutations
 
         private static ulong GetPermutations(ulong n, ulong m)
         {
-            return (fact[n + m] / (fact[n] * fact[m])) % mod;
+            return (fact[n + m - 1] * (modular_exp((fact[n] * fact[m - 1]) % mod, mod - 2))) % mod;
+        }
+
+        private static ulong modular_exp(ulong num, ulong pow)
+        {
+            if (pow == 0)
+                return 1;
+            if (pow == 1)
+                return num % mod;
+
+            ulong module = modular_exp(num, pow / 2);
+            ulong tmp = (module * module) % mod;
+
+            if (pow % 2 == 0)
+                return tmp;
+
+            return (num * tmp) % mod;
         }
 
         private static void PreComputeFactorials()
