@@ -285,6 +285,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkAndToys", "MarkAndToys\
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Ollivander's Inventory", "Ollivander's Inventory\Ollivander's Inventory.sqlproj", "{9E577138-E565-4359-A20A-2E4C0162EB8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permuting Two Arrays", "Permuting Two Arrays\Permuting Two Arrays.csproj", "{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1701,6 +1703,18 @@ Global
 		{9E577138-E565-4359-A20A-2E4C0162EB8C}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E577138-E565-4359-A20A-2E4C0162EB8C}.Release|x86.Build.0 = Release|Any CPU
 		{9E577138-E565-4359-A20A-2E4C0162EB8C}.Release|x86.Deploy.0 = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|x64.Build.0 = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Debug|x86.Build.0 = Debug|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|x64.ActiveCfg = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|x64.Build.0 = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1837,6 +1851,7 @@ Global
 		{ED8E19C4-0254-4801-B6CA-050D31A66C43} = {8329EDC9-1F37-4CF5-A179-1C787B744CDA}
 		{349A7E6F-9C89-4B29-944C-943787C152BF} = {A8B418ED-A9B3-4115-A0F9-71DC18CEA103}
 		{9E577138-E565-4359-A20A-2E4C0162EB8C} = {37F44871-BAAC-445A-B341-8807982A067C}
+		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4} = {A8B418ED-A9B3-4115-A0F9-71DC18CEA103}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
