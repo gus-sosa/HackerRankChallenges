@@ -1,13 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 class Solution
 {
 
     static int[] largestPermutation(int k, int[] arr)
     {
-        // Complete this function
+        var map = new SortedDictionary<int, int>();
+        for (int i = 0; i < arr.Length; i++)
+            map[arr[i]] = i;
+
+        for (int i = 0; i < arr.Length && k > 0; i++)
+        {
+            var index = map[arr.Length - i];
+            if (index != i)
+            {
+                swap(i, index, arr);
+                k--;
+                map.Remove(arr[i]);
+                map[arr[index]] = index;
+            }
+        }
+
+        return arr;
+    }
+
+    private static void swap(int i1, int i2, int[] arr)
+    {
+        int tmp = arr[i1];
+        arr[i1] = arr[i2];
+        arr[i2] = tmp;
     }
 
     static void Main(String[] args)
