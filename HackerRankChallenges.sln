@@ -289,6 +289,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permuting Two Arrays", "Per
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriyankaAndToys", "PriyankaAndToys\PriyankaAndToys.csproj", "{96D7919E-172D-47C2-87FA-AD5CACDFFA20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestPermutation", "LargestPermutation\LargestPermutation.csproj", "{68FF2850-B592-4A17-840B-46E26933D250}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1729,6 +1731,18 @@ Global
 		{96D7919E-172D-47C2-87FA-AD5CACDFFA20}.Release|x64.Build.0 = Release|Any CPU
 		{96D7919E-172D-47C2-87FA-AD5CACDFFA20}.Release|x86.ActiveCfg = Release|Any CPU
 		{96D7919E-172D-47C2-87FA-AD5CACDFFA20}.Release|x86.Build.0 = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|x64.Build.0 = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Debug|x86.Build.0 = Debug|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|x64.ActiveCfg = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|x64.Build.0 = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|x86.ActiveCfg = Release|Any CPU
+		{68FF2850-B592-4A17-840B-46E26933D250}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1867,6 +1881,7 @@ Global
 		{9E577138-E565-4359-A20A-2E4C0162EB8C} = {37F44871-BAAC-445A-B341-8807982A067C}
 		{76045EF5-0C8F-412C-99F2-5EEB30F3A5C4} = {A8B418ED-A9B3-4115-A0F9-71DC18CEA103}
 		{96D7919E-172D-47C2-87FA-AD5CACDFFA20} = {A8B418ED-A9B3-4115-A0F9-71DC18CEA103}
+		{68FF2850-B592-4A17-840B-46E26933D250} = {A8B418ED-A9B3-4115-A0F9-71DC18CEA103}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
