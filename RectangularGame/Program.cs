@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 class Solution
 {
 
     // Complete the solve function below.
-    static int solve(int[][] steps)
+    static long solve(int[][] steps)
     {
-
-
+        long minx = long.MaxValue, miny = long.MaxValue;
+        foreach (int[] step in steps)
+        {
+            minx = Math.Min(minx, step[0]);
+            miny = Math.Min(miny, step[1]);
+        }
+        return minx * miny;
     }
 
     static void Main(string[] args)
@@ -26,7 +29,7 @@ class Solution
             steps[stepsRowItr] = Array.ConvertAll(Console.ReadLine().Split(' '), stepsTemp => Convert.ToInt32(stepsTemp));
         }
 
-        int result = solve(steps);
+        long result = solve(steps);
 
         textWriter.WriteLine(result);
 
