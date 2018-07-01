@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System;
+﻿using System;
 
 class Solution
 {
@@ -8,16 +7,13 @@ class Solution
     static int minimumSwaps(int[] arr)
     {
         int num = 0;
-
-        for (int i = 0; i < arr.Length; i++)
-            if (arr[i] != i + 1)
-                for (int j = i + 1; j < arr.Length; j++)
-                    if (arr[j] == i + 1)
-                    {
-                        swap(arr, i, j);
-                        num++;
-                    }
-
+        for (int i = 0; i < arr.Length;)
+            if (arr[i] == i + 1) ++i;
+            else
+            {
+                swap(arr, i, arr[i] - 1);
+                ++num;
+            }
         return num;
     }
 
