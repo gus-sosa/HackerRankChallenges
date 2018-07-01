@@ -1,15 +1,5 @@
-﻿using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
-using System.Text;
 using System;
 
 class Solution
@@ -18,14 +8,18 @@ class Solution
     // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries)
     {
-
-
+        long[] arr = new long[n];
+        foreach (int[] q in queries)
+        {
+            int a = q[0] - 1, b = q[1] - 1, k = q[2];
+            for (int i = a; i <= b; i++)
+                arr[i] += k;
+        }
+        return arr.Max();
     }
 
     static void Main(string[] args)
     {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
-
         string[] nm = Console.ReadLine().Split(' ');
 
         int n = Convert.ToInt32(nm[0]);
@@ -41,9 +35,6 @@ class Solution
 
         long result = arrayManipulation(n, queries);
 
-        textWriter.WriteLine(result);
-
-        textWriter.Flush();
-        textWriter.Close();
+        Console.WriteLine(result);
     }
 }
