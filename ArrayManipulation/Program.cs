@@ -1,39 +1,45 @@
-﻿using System.IO;
-using System.Linq;
-using System;
+﻿using System;
 
 class Solution
 {
 
     // Complete the arrayManipulation function below.
-    static long arrayManipulation(int n, int[][] queries)
+    static ulong arrayManipulation(ulong n, ulong[][] queries)
     {
-        long[] arr = new long[n];
-        foreach (int[] q in queries)
+        var arr = new ulong[n];
+        foreach (ulong[] q in queries)
         {
-            int a = q[0] - 1, b = q[1] - 1, k = q[2];
-            for (int i = a; i <= b; i++)
-                arr[i] += k;
+            arr[q[0]] += q[2];
+            if (q[1] < n)
+                arr[q[1]] -= q[2];
         }
-        return arr.Max();
+
+        ulong max = ulong.MinValue, currentValue = 0;
+        for (ulong i = 0; i < n; i++)
+        {
+            currentValue = currentValue + arr[i];
+            max = Math.Max(max, currentValue);
+        }
+
+        return max;
     }
 
     static void Main(string[] args)
     {
         string[] nm = Console.ReadLine().Split(' ');
 
-        int n = Convert.ToInt32(nm[0]);
+        ulong n = Convert.ToUInt64(nm[0]);
 
         int m = Convert.ToInt32(nm[1]);
 
-        int[][] queries = new int[m][];
+        var queries = new ulong[m][];
 
         for (int i = 0; i < m; i++)
         {
-            queries[i] = Array.ConvertAll(Console.ReadLine().Split(' '), queriesTemp => Convert.ToInt32(queriesTemp));
+            queries[i] = Array.ConvertAll(Console.ReadLine().Split(' '), queriesTemp => Convert.ToUInt64(queriesTemp));
         }
 
-        long result = arrayManipulation(n, queries);
+        ulong result = arrayManipulation(n, queries);
 
         Console.WriteLine(result);
     }
