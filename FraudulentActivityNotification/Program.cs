@@ -1,32 +1,37 @@
 ﻿using System;
-using System.Diagnostics;
 
 class Solution
 {
-
+    private static int[] countSortTable = new int[201];
     // Complete the activityNotifications function below.
     static int activityNotifications(int[] expenditure, int d)
     {
-        //Debugger.Launch();
-
         int numNotifications = 0;
+        for (int i = 0; i < d; i++)
+            countSortTable[expenditure[i]]++;
         for (int i = d; i < expenditure.Length; i++)
-            if (RaiseNotification(ComputeMedian(expenditure, i - d, i - 1), expenditure[i]))
+        {
+            if (RaiseNotification(GetMedian(d), expenditure[i]))
                 numNotifications++;
+            countSortTable[expenditure[i]]++;
+            countSortTable[expenditure[i - d]]--;
+        }
         return numNotifications;
     }
 
-    private static int ComputeMedian(int[] expenditure, int iStart, int iEnd)
+    private static double GetMedian(int d) => d % 2 == 0 ? (GetMedianIndex(d / 2) + GetMedianIndex(d / 2 + 1)) / 2d : GetMedianIndex(d / 2 + 1);
+
+    private static int GetMedianIndex(int index)
     {
-        int length = iEnd - iStart + 1;
-        Array.Sort(expenditure, iStart, length);
-        int middleIndex = length / 2;
-        return length % 2 == 0
-            ? (expenditure[iStart + middleIndex - 1] + expenditure[iStart + middleIndex]) / 2
-            : expenditure[iStart + middleIndex];
+        int count = 0, i = 0;
+        for (; i < countSortTable.Length; i++)
+            if (countSortTable[i] > 0)
+                if (count + countSortTable[i] < index) count += countSortTable[i];
+                else break;
+        return i;
     }
 
-    private static bool RaiseNotification(int median, int currentExpend) => currentExpend >= 2 * median;
+    private static bool RaiseNotification(double median, int currentExpend) => currentExpend >= 2 * median;
 
     static void Main(string[] args)
     {
