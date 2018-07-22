@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 class Solution
 {
@@ -25,6 +26,8 @@ class Solution
                 ++count;
             }
         }
+
+        Debugger.Launch();
 
         for (int l = 4; l <= s.Length; l++)
             for (int i = 0; i + l - 1 < s.Length; i += l)
