@@ -74,8 +74,6 @@ class Solution
         map[key.Item1][key.Item2] = value;
     }
 
-    private static char GetCharacter(Dictionary<int[], char> map, int[] positions) { return map.ContainsKey(positions) ? map[positions] : NULL_CHARACTER; }
-
     static void Main(string[] args)
     {
         Console.ReadLine();//skipping
