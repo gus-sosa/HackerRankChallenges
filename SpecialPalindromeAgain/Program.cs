@@ -1,77 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 class Solution
 {
-    private const char NULL_CHARACTER = '\0';
+    class TupleCharacterLength
+    {
+        public char Character { get; private set; }
+        public int Length { get; private set; }
+
+        public static TupleCharacterLength Create(char c, int len)
+        {
+            return new TupleCharacterLength()
+            {
+                Character = c,
+                Length = len
+            };
+        }
+    }
+
     // Complete the substrCount function below.
     static long substrCount(string s)
     {
-        var map = new Dictionary<int, Dictionary<int, char>>();
-        long count = 0;
-        //Debugger.Launch();
-        for (int i = 0; i < s.Length; i++)
+        var sGroup = CreateGroup(s);
+        int count = 0;
+        for (int i = 0; i < sGroup.Count; i++)
         {
-            ++count;
-            AddKeyValue(map, Tuple.Create(i, i), s[i]);
-            if (i + 1 < s.Length && s[i] == s[i + 1])
+            int l = sGroup[i].Length;
+            count += ComputeNumCombinations(l);
+            if (l == 1 && i > 0 && i < sGroup.Count - 1 && sGroup[i - 1].Character == sGroup[i + 1].Character)
             {
-                AddKeyValue(map, Tuple.Create(i, i + 1), s[i]);
-                ++count;
-            }
-            if (i + 2 < s.Length && s[i] == s[i + 2])
-            {
-                AddKeyValue(map, Tuple.Create(i, i + 2), s[i]);
-                AddKeyValue(map, Tuple.Create(i + 2, i), s[i + 1]);
-                ++count;
+                l = Math.Min(sGroup[i - 1].Length, sGroup[i + 1].Length);
+                count += l;
             }
         }
-
-        for (int l = 4; l <= s.Length; l++)
-            for (int i = 0; i + l - 1 < s.Length; i += l)
-            {
-                int middleIndex = (i + l) / 2;
-                int iStartHead = i,
-                    iEndHead = middleIndex - 1,
-                    iStartTail = l % 2 == 0 ? middleIndex : middleIndex + 1,
-                    iEndTail = i + l - 1;
-                var head = Tuple.Create(iStartHead, iEndHead);
-                var tail = Tuple.Create(iStartTail, iEndTail);
-                var headReverse = Tuple.Create(iEndHead, iStartHead);
-                var tailReverse = Tuple.Create(iEndTail, iStartTail);
-                if (ContainKey(map, head) && GetValue(map, head) == GetValue(map, tail) &&
-                      GetValue(map, headReverse) == NULL_CHARACTER && GetValue(map, headReverse) == GetValue(map, tailReverse))
-                {
-                    ++count;
-                    AddKeyValue(map, Tuple.Create(i, i + l - 1), s[i]);
-                    if (l % 2 != 0 && s[middleIndex] != s[i])
-                        AddKeyValue(map, Tuple.Create(i + l - 1, i), s[middleIndex]);
-                }
-            }
-
         return count;
     }
 
-    private static char GetValue(Dictionary<int, Dictionary<int, char>> map, Tuple<int, int> key)
-    {
-        var dictionary = map[key.Item1];
-        if (dictionary != null && dictionary.ContainsKey(key.Item2))
-            return dictionary[key.Item2];
-        return NULL_CHARACTER;
-    }
+    private static int ComputeNumCombinations(int l) => l * (l + 1) / 2;
 
-    private static bool ContainKey(Dictionary<int, Dictionary<int, char>> map, Tuple<int, int> key)
+    private static List<TupleCharacterLength> CreateGroup(string s)
     {
-        var dictionary = map[key.Item1];
-        return dictionary != null && dictionary.ContainsKey(key.Item2);
-    }
+        var sGroup = new List<TupleCharacterLength>();
 
-    private static void AddKeyValue(Dictionary<int, Dictionary<int, char>> map, Tuple<int, int> key, char value)
-    {
-        if (!map.ContainsKey(key.Item1))
-            map[key.Item1] = new Dictionary<int, char>();
-        map[key.Item1][key.Item2] = value;
+        for (int i = 0, j; i < s.Length;)
+        {
+            j = i + 1;
+            while (j < s.Length && s[i] == s[j])
+                j++;
+            int lengthGroup = j - i;
+            sGroup.Add(TupleCharacterLength.Create(s[i], lengthGroup));
+            i = j;
+        }
+        return sGroup;
     }
 
     static void Main(string[] args)
