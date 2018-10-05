@@ -1,42 +1,79 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-class Solution
+internal class Solution
 {
-    static Dictionary<int, int> map = new Dictionary<int, int>();
-
-    private static string s1, s2;
-    // Complete the commonChild function below.
-    static int commonChild(int is1, int is2)
+    private static void Main(string[] args)
     {
-        if (is1 == s1.Length || is2 == s2.Length)
-            return 0;
-
-        int num = GetIndex(is1, is2);
-        if (map.ContainsKey(num))
-            return map[num];
-        string longestPrefix = GetLongestPrefix(is1, is2);
-        return map[num] = longestPrefix.Length == 0
-            ? Math.Max(commonChild(is1 + 1, is2), commonChild(is1, is2 + 1))
-            : longestPrefix.Length + commonChild(is1 + longestPrefix.Length, is2 + longestPrefix.Length);
+        //Debugger.Launch();
+        var cad1 = Console.ReadLine();
+        var cad2 = Console.ReadLine();
+        var maxLength = GetMaxCommonLength(cad1 , cad2);
+        Console.WriteLine(maxLength);
     }
 
-    private static string GetLongestPrefix(int is1, int is2)
+    private static int GetMaxCommonLength(string cad1 , string cad2)
     {
-        var prefix = new StringBuilder();
-        while (is1 < s1.Length && is2 < s2.Length && s1[is1] == s2[is2++])
-            prefix.Append(s1[is1++]);
-        return prefix.ToString();
+        for (var length = 0 ; length < cad1.Length ; length++)
+            foreach (List<int> seq in GetSeqToDelete(length , cad1.Length))
+            {
+                if (seq == null)
+                    break;
+                if (CanFindChildInOtherCad(cad1 , seq , cad2))
+                    return cad1.Length - length;
+            }
+        return 0;
     }
 
-    private static int GetIndex(int is1, int is2) => is1 * 10000 + is2;
-
-    static void Main(string[] args)
+    private static IEnumerable<List<int>> GetSeqToDelete(int lengthSeq , int lengthSet)
     {
-        s1 = Console.ReadLine();
-        s2 = Console.ReadLine();
-        int result = commonChild(0, 0);
-        Console.WriteLine(result);
+        foreach (List<int> item in GetSeqToDeleteRec(new List<int>(lengthSeq) , 0 , lengthSet))
+            yield return item;
+    }
+
+    private static IEnumerable<List<int>> GetSeqToDeleteRec(List<int> list , int indexInSet , int lengthSet)
+    {
+        if (list.Count == list.Capacity) yield return list;
+        else
+        {
+            var lastIndexToTake = indexInSet + (list.Capacity - list.Count) - 1;
+            if (lastIndexToTake < lengthSet)
+            {
+                foreach (List<int> item in GetSeqToDeleteRec(list , indexInSet + 1 , lengthSet))
+                {
+                    if (item == null)
+                        break;
+                    yield return item;
+                }
+
+                list.Add(indexInSet);
+                foreach (List<int> item in GetSeqToDeleteRec(list , indexInSet + 1 , lengthSet))
+                {
+                    if (item == null)
+                        break;
+                    yield return item;
+                }
+                list.RemoveAt(list.Count - 1);
+            }
+
+            yield return null;
+        }
+    }
+
+    private static bool CanFindChildInOtherCad(string cad1 , List<int> seq , string cad2)
+    {
+        var lastIndexInSeq = 0;
+        var lastIndexInCad2 = 0;
+        for (var i = 0 ; i < cad1.Length ; i++)
+            if (lastIndexInSeq < seq.Count && seq[lastIndexInSeq] == i) lastIndexInSeq++;
+            else
+            {
+                lastIndexInCad2 = cad2.IndexOf(cad1[i] , lastIndexInCad2);
+                if (lastIndexInCad2 < 0)
+                    return false;
+                ++lastIndexInCad2;
+            }
+
+        return true;
     }
 }
