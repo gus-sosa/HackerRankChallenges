@@ -1,43 +1,61 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 
 class Solution
 {
-    const long NO_VALUE = -1;
     // Complete the countTriplets function below.
-    static long countTriplets(long[] arr, long r)
-    {
-        if (r == 1)
-            return countTripletsOfOnes(arr.Count());
-        ConvertArrToRPower(arr, r);
+    static long countTriplets(long[] arr, long r) => r == 1 ? countTripletsForRatioEqualOne(arr) : countTripletsForRatioGreaterThanOne(arr, r);
 
-        int num = 0;
+    private static long countTripletsForRatioGreaterThanOne(long[] arr, long r)
+    {
+        long count = 0;
+        var dict = new Dictionary<long, List<int>>();
         for (int i = 0; i < arr.Length; i++)
         {
-            for (int j = i + 1; j < arr.Length; j++)
+            long v = arr[i];
+            long power;
+            if (IsPowerOfR(v, r, out power))
             {
-                for (int k = 0; k < arr.Length; k++)
-                {
-                    long a = arr[i], b = arr[j], c = arr[k];
-                    if (b - a == 1 && c - b == 1)
-                        num++;
-                }
+                AddInDict(dict, power, i);
+                int numPowerMinusOne = 0, numPowerMinusTwo = 0;
+                if (dict.ContainsKey(power - 1))
+                    numPowerMinusOne = ~dict[power - 1].BinarySearch(i);
+                if (dict.ContainsKey(power - 2))
+                    numPowerMinusTwo = ~dict[power - 2].BinarySearch(i);
+                count += numPowerMinusOne * numPowerMinusTwo;
             }
         }
-        return num;
+        return count;
     }
 
-    private static long countTripletsOfOnes(long n) => n * (n - 1) * (n - 2) / 6;
-
-    private static void ConvertArrToRPower(long[] arr, long r)
+    private static void AddInDict(Dictionary<long, List<int>> dict, long key, int value)
     {
-        for (int i = 0; i < arr.Length; i++)
+        if (!dict.ContainsKey(key))
+            dict[key] = new List<int>();
+        dict[key].Add(value);
+    }
+
+    private static bool IsPowerOfR(long value, long r, out long power)
+    {
+        double tmp = Math.Log(value, r);
+        power = Convert.ToInt64(tmp);
+        return value == Convert.ToInt64(Math.Pow(r, power));
+    }
+
+    private static long countTripletsForRatioEqualOne(long[] arr)
+    {
+        var dict = new Dictionary<long, long>();
+        foreach (long num in arr)
         {
-            double tmp = Math.Log(arr[i], r);
-            long newValue = Convert.ToInt64(tmp);
-            arr[i] = tmp == newValue ? newValue : NO_VALUE;
+            if (!dict.ContainsKey(num))
+                dict[num] = 0;
+            dict[num] += 1;
         }
+        long count = 0;
+        foreach (long value in dict.Values)
+            count += value * (value - 1) * (value - 2) / 6;
+        return count;
     }
 
     static void Main(string[] args)
