@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 
 internal class Solution
@@ -8,17 +7,15 @@ internal class Solution
     // Complete the maxSubsetSum function below.
     private static int maxSubsetSum(int[] arr)
     {
-        Debugger.Launch();
+        //Debugger.Launch();
 
         if (arr.Length == 1)
             return arr[0];
 
-        int prevPrevMax = arr[0], prevMax = int.MinValue;
-        var prevLastPosTaken = false;
+        int prevPrevMax = arr[0], prevMax = Math.Max(arr[1] , arr[0]);
+        var prevLastPosTaken = prevMax == arr[1];
 
-        Tuple<int , bool> newMax = computeSubsetSum(arr[1] , prevPrevMax , prevMax , prevLastPosTaken);
-        prevMax = newMax.Item1;
-        prevLastPosTaken = newMax.Item2;
+        Tuple<int , bool> newMax = null;
 
         for (var i = 2 ; i < arr.Length ; i++)
         {
