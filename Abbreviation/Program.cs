@@ -1,44 +1,70 @@
-﻿using System.CodeDom.Compiler;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
-using System.Text;
-using System;
+using System.Diagnostics;
 
-class Solution
+internal class Solution
 {
+    private const string YES = "YES";
+    private const string NO = "NO";
 
     // Complete the abbreviation function below.
-    static string abbreviation(string a , string b)
+    private static string abbreviation(string a , string b)
     {
-        return "YES";
-    }
+        Debugger.Launch();
 
-    static void Main(string[] args)
-    {
-        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH") , true);
+        Dictionary<char , List<int>> map = GetCharMap(a.ToUpper());
+        var lastIndex = -1;
+        var listIndexes = new List<int>();
 
-        int q = Convert.ToInt32(Console.ReadLine());
-
-        for (int qItr = 0 ; qItr < q ; qItr++)
+        foreach (var c in b)
         {
-            string a = Console.ReadLine();
+            if (!map.ContainsKey(c))
+                return NO;
 
-            string b = Console.ReadLine();
-
-            string result = abbreviation(a , b);
-
-            textWriter.WriteLine(result);
+            List<int> indexes = map[c];
+            lastIndex = GetNextIndex(lastIndex , indexes);
+            if (lastIndex == -1)
+                return NO;
+            listIndexes.Add(lastIndex);
         }
 
-        textWriter.Flush();
-        textWriter.Close();
+        return YES;
+    }
+
+    private static int GetNextIndex(int lastIndex , List<int> indexes)
+    {
+        var pos = ~indexes.BinarySearch(lastIndex);
+        return pos == indexes.Count ? -1 : indexes[pos];
+    }
+
+    private static Dictionary<char , List<int>> GetCharMap(string a)
+    {
+        var map = new Dictionary<char , List<int>>();
+
+        for (var i = 0 ; i < a.Length ; i++)
+        {
+            var c = a[i];
+            if (!map.ContainsKey(c))
+                map[c] = new List<int>();
+            map[c].Add(i);
+        }
+
+        return map;
+    }
+
+    private static void Main(string[] args)
+    {
+        var q = Convert.ToInt32(Console.ReadLine());
+
+        for (var qItr = 0 ; qItr < q ; qItr++)
+        {
+            var a = Console.ReadLine();
+
+            var b = Console.ReadLine();
+
+            var result = abbreviation(a , b);
+
+            Console.WriteLine(result);
+        }
     }
 }
