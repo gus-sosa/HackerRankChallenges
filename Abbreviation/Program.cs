@@ -1,55 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 internal class Solution
 {
     private const string YES = "YES";
     private const string NO = "NO";
+    private static readonly Dictionary<int , bool> dict = new Dictionary<int , bool>();
 
     // Complete the abbreviation function below.
     private static string abbreviation(string a , string b)
     {
-        Debugger.Launch();
-
-        Dictionary<char , List<int>> map = GetCharMap(a.ToUpper());
-        var lastIndex = -1;
-        var listIndexes = new List<int>();
-
-        foreach (var c in b)
-        {
-            if (!map.ContainsKey(c))
-                return NO;
-
-            List<int> indexes = map[c];
-            lastIndex = GetNextIndex(lastIndex , indexes);
-            if (lastIndex == -1)
-                return NO;
-            listIndexes.Add(lastIndex);
-        }
-
-        return YES;
+        //Debugger.Launch();
+        dict.Clear();
+        return abbreviation(a , 0 , b , 0) ? YES : NO;
     }
 
-    private static int GetNextIndex(int lastIndex , List<int> indexes)
+    private static bool abbreviation(string a , int ia , string b , int ib)
     {
-        var pos = ~indexes.BinarySearch(lastIndex);
-        return pos == indexes.Count ? -1 : indexes[pos];
-    }
-
-    private static Dictionary<char , List<int>> GetCharMap(string a)
-    {
-        var map = new Dictionary<char , List<int>>();
-
-        for (var i = 0 ; i < a.Length ; i++)
+        var key = ia * 10000 + ib;
+        if (dict.ContainsKey(key))
+            return dict[key];
+        if (ia == a.Length)
+            return dict[key] = false;
+        if (ib == b.Length)
+            return dict[key] = true;
+        if (a[ia] == b[ib])
+            return dict[key] = abbreviation(a , ia + 1 , b , ib + 1);
+        if (char.ToUpper(a[ia]) == b[ib])
         {
-            var c = a[i];
-            if (!map.ContainsKey(c))
-                map[c] = new List<int>();
-            map[c].Add(i);
+            if (!(dict[key] = abbreviation(a , ia + 1 , b , ib + 1)))
+                dict[key] = abbreviation(a , ia + 1 , b , ib);
+            return dict[key];
         }
-
-        return map;
+        if (char.IsUpper(a[ia]))
+            return dict[key] = false;
+        return dict[key] = abbreviation(a , ia + 1 , b , ib);
     }
 
     private static void Main(string[] args)
