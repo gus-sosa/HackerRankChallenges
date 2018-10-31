@@ -1,35 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 internal class Solution
 {
-
+    private static long c_lib, c_road;
+    private static List<int>[] graph;
+    private static bool[] marked;
     // Complete the roadsAndLibraries function below.
     private static long roadsAndLibraries(int n , int c_lib , int c_road , int[][] cities)
     {
-        Debugger.Launch();
-        int numComponents = 0, numVisitedCities = 0;
-        var marked = new bool[n];
-        List<int>[] graph = BuildGraph(cities , n);
+        //Debugger.Launch();
+        Solution.c_lib = c_lib;
+        Solution.c_road = c_road;
+        marked = new bool[n];
+        graph = BuildGraph(cities , n);
+
+        long cost = 0;
         for (var i = 0 ; i < n ; i++)
             if (!marked[i])
-            {
-                numComponents++;
-                numVisitedCities += dfs(i , graph , marked);
-            }
+                cost += dfs(i , c_lib);
 
-        return numComponents * (c_lib - c_road) + c_road * numVisitedCities;
+        return cost;
     }
 
-    private static int dfs(int i , List<int>[] graph , bool[] marked)
+    private static long dfs(int i , long currentCost)
     {
-        var numMarked = 1;
         marked[i] = true;
+        long minCost = 0;
         foreach (var adj in adjacents(i , graph).Where(a => !marked[a]))
-            numMarked += dfs(adj , graph , marked);
-        return numMarked;
+            minCost += dfs(adj , Math.Min(currentCost + c_lib , currentCost + c_road));
+        return minCost == 0 ? currentCost : minCost;
     }
 
     private static IEnumerable<int> adjacents(int i , List<int>[] graph)
