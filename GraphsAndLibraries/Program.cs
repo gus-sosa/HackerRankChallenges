@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 internal class Solution
@@ -8,25 +9,26 @@ internal class Solution
     // Complete the roadsAndLibraries function below.
     private static long roadsAndLibraries(int n , int c_lib , int c_road , int[][] cities)
     {
-        int numComponents = 0, numRoadsToBuild = 0;
+        Debugger.Launch();
+        int numComponents = 0, numVisitedCities = 0;
         var marked = new bool[n];
         List<int>[] graph = BuildGraph(cities , n);
         for (var i = 0 ; i < n ; i++)
             if (!marked[i])
             {
                 numComponents++;
-                numRoadsToBuild += dfs(i , graph , marked);
+                numVisitedCities += dfs(i , graph , marked);
             }
 
-        return numComponents * (c_lib - c_road) + c_road * numRoadsToBuild;
+        return numComponents * (c_lib - c_road) + c_road * numVisitedCities;
     }
 
     private static int dfs(int i , List<int>[] graph , bool[] marked)
     {
-        var numMarked = 0;
+        var numMarked = 1;
         marked[i] = true;
         foreach (var adj in adjacents(i , graph).Where(a => !marked[a]))
-            numMarked += dfs(adj , graph , marked) + 1;
+            numMarked += dfs(adj , graph , marked);
         return numMarked;
     }
 
@@ -45,7 +47,7 @@ internal class Solution
 
         for (var i = 0 ; i < cities.Length ; i++)
         {
-            int a = cities[i][0], b = cities[i][1];
+            int a = cities[i][0] - 1, b = cities[i][1] - 1;
             graph[a].Add(b);
             graph[b].Add(a);
         }
