@@ -349,6 +349,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindTheNearestClone", "Find
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFS_ShortestReachInAGraph", "BFS_ShortestReachInAGraph\BFS_ShortestReachInAGraph.csproj", "{1FC37DEE-080C-4139-9E45-9198BB1208D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFS_Connected Cell in a Grid", "DFS_Connected Cell in a Grid\DFS_Connected Cell in a Grid.csproj", "{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2029,6 +2031,18 @@ Global
 		{1FC37DEE-080C-4139-9E45-9198BB1208D3}.Release|x64.Build.0 = Release|Any CPU
 		{1FC37DEE-080C-4139-9E45-9198BB1208D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{1FC37DEE-080C-4139-9E45-9198BB1208D3}.Release|x86.Build.0 = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|x64.Build.0 = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Debug|x86.Build.0 = Debug|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|x64.ActiveCfg = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|x64.Build.0 = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|x86.ActiveCfg = Release|Any CPU
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2196,6 +2210,7 @@ Global
 		{CE0CF5B9-502D-4941-B3EE-885DEAB848C3} = {FCB3BFE7-B3A4-448E-9AB3-226D5E792FE6}
 		{3CA3006A-E518-4601-93E0-423A3295B22E} = {FCB3BFE7-B3A4-448E-9AB3-226D5E792FE6}
 		{1FC37DEE-080C-4139-9E45-9198BB1208D3} = {FCB3BFE7-B3A4-448E-9AB3-226D5E792FE6}
+		{E569CEFC-3F26-40F8-B90D-EBCB6B26706D} = {FCB3BFE7-B3A4-448E-9AB3-226D5E792FE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
