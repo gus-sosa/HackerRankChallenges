@@ -4,59 +4,57 @@ using System.Diagnostics;
 
 class Solution
 {
+    private static long _countTriplets;
+    private static Dictionary<long, long> _tuples;
+    private static Dictionary<long, long> _singles;
+
+
     // Complete the countTriplets function below.
-    static long countTriplets(long[] arr, long r) => r == 1 ? countTripletsForRatioEqualOne(arr) : countTripletsForRatioGreaterThanOne(arr, r);
-
-    private static long countTripletsForRatioGreaterThanOne(long[] arr, long r)
+    static long countTriplets(long[] arr, long r)
     {
-        long count = 0;
-        var dict = new Dictionary<long, List<int>>();
-        for (int i = 0; i < arr.Length; i++)
-        {
-            long v = arr[i];
-            long power;
-            if (IsPowerOfR(v, r, out power))
+        Debugger.Launch();
+        _countTriplets = 0;
+        _tuples = new Dictionary<long, long>();
+        _singles = new Dictionary<long, long>();
+
+        foreach (var currentNum in arr)
+            if (IsPowerOfRatio(currentNum, r))
             {
-                AddInDict(dict, power, i);
-                int numPowerMinusOne = 0, numPowerMinusTwo = 0;
-                if (dict.ContainsKey(power - 1))
-                    numPowerMinusOne = ~dict[power - 1].BinarySearch(i);
-                if (dict.ContainsKey(power - 2))
-                    numPowerMinusTwo = ~dict[power - 2].BinarySearch(i);
-                count += numPowerMinusOne * numPowerMinusTwo;
+                AggregateTriplets(currentNum, r);
+                AggregateDoubles(currentNum, r);
+                AggregateSingles(currentNum);
             }
-        }
-        return count;
+
+        return _countTriplets;
     }
 
-    private static void AddInDict(Dictionary<long, List<int>> dict, long key, int value)
+    private static void AggregateSingles(long num)
     {
-        if (!dict.ContainsKey(key))
-            dict[key] = new List<int>();
-        dict[key].Add(value);
+        if (!_singles.ContainsKey(num))
+            _singles[num] = 0;
+        ++_singles[num];
     }
 
-    private static bool IsPowerOfR(long value, long r, out long power)
+    private static void AggregateDoubles(long currentNum, long ratio)
     {
-        double tmp = Math.Log(value, r);
-        power = Convert.ToInt64(tmp);
-        return value == Convert.ToInt64(Math.Pow(r, power));
+        var previousInProgression = PreviousInProgression(currentNum, ratio);
+        if (_singles.ContainsKey(previousInProgression))
+            AddTupletes(currentNum, _singles[previousInProgression]);
     }
 
-    private static long countTripletsForRatioEqualOne(long[] arr)
+    private static void AddTupletes(long endTuplete, long cant)
     {
-        var dict = new Dictionary<long, long>();
-        foreach (long num in arr)
-        {
-            if (!dict.ContainsKey(num))
-                dict[num] = 0;
-            dict[num] += 1;
-        }
-        long count = 0;
-        foreach (long value in dict.Values)
-            count += value * (value - 1) * (value - 2) / 6;
-        return count;
+        if (!_tuples.ContainsKey(endTuplete))
+            _tuples[endTuplete] = 0;
+        _tuples[endTuplete] += cant;
     }
+
+    private static void AggregateTriplets(long num, long ratio) => _countTriplets += (_tuples.ContainsKey(PreviousInProgression(num, ratio)) ? _tuples[PreviousInProgression(num, ratio)] : 0);
+
+    private static long PreviousInProgression(long num, long ratio) => num / ratio;
+
+    private static bool IsPowerOfRatio(long num, long ratio) => (ratio == 1 && num == 1) || (num == 1 && ratio > 1) ||
+        (num % ratio == 0 && long.TryParse(Math.Log(num, ratio).ToString(), out _));
 
     static void Main(string[] args)
     {
