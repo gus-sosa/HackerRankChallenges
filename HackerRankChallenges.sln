@@ -373,6 +373,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedLists", "LinkedLists"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleDetection", "CycleDetection\CycleDetection.csproj", "{70A17694-B0E8-4695-970F-70E2DC94372A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMergePointOfTwoLists", "FindMergePointOfTwoLists\FindMergePointOfTwoLists.csproj", "{5AB1F73F-9D92-4616-8311-60524AD6E1F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2137,6 +2139,18 @@ Global
 		{70A17694-B0E8-4695-970F-70E2DC94372A}.Release|x64.Build.0 = Release|Any CPU
 		{70A17694-B0E8-4695-970F-70E2DC94372A}.Release|x86.ActiveCfg = Release|Any CPU
 		{70A17694-B0E8-4695-970F-70E2DC94372A}.Release|x86.Build.0 = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|x64.Build.0 = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Debug|x86.Build.0 = Debug|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|x64.Build.0 = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|x86.ActiveCfg = Release|Any CPU
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2315,6 +2329,7 @@ Global
 		{570DF467-9997-4B65-96E1-7A0AC3AF4DDF} = {2556B3EC-37CA-4860-ABBD-C52DFD85D246}
 		{8370D52D-025D-46D9-B5DD-BD556C7F77D2} = {C6C79726-A484-42D0-BF6D-5794F370C896}
 		{70A17694-B0E8-4695-970F-70E2DC94372A} = {8370D52D-025D-46D9-B5DD-BD556C7F77D2}
+		{5AB1F73F-9D92-4616-8311-60524AD6E1F7} = {8370D52D-025D-46D9-B5DD-BD556C7F77D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
