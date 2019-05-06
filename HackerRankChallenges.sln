@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RookieRank2", "RookieRank2", "{11805F6D-3D2F-472D-A3C8-56ED4302D10E}"
 EndProject
@@ -385,7 +385,9 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TreeHuffmanDecoding", "Tree
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stacks", "Stacks", "{5299DFED-DC4C-4A6E-81FE-3F2407117020}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestRectangle", "LargestRectangle\LargestRectangle.csproj", "{F04DEBD5-9A96-465C-92D3-8694A861A5B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargestRectangle", "LargestRectangle\LargestRectangle.csproj", "{F04DEBD5-9A96-465C-92D3-8694A861A5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfTwoStacks", "GameOfTwoStacks\GameOfTwoStacks.csproj", "{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2193,6 +2195,18 @@ Global
 		{F04DEBD5-9A96-465C-92D3-8694A861A5B3}.Release|x64.Build.0 = Release|Any CPU
 		{F04DEBD5-9A96-465C-92D3-8694A861A5B3}.Release|x86.ActiveCfg = Release|Any CPU
 		{F04DEBD5-9A96-465C-92D3-8694A861A5B3}.Release|x86.Build.0 = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|x64.Build.0 = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|x64.ActiveCfg = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|x64.Build.0 = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2378,6 +2392,7 @@ Global
 		{482FDF39-44C5-4FB5-A742-D8B4BB65F88E} = {CBAA1921-77DA-4233-822E-6DD5D6D35477}
 		{5299DFED-DC4C-4A6E-81FE-3F2407117020} = {C6C79726-A484-42D0-BF6D-5794F370C896}
 		{F04DEBD5-9A96-465C-92D3-8694A861A5B3} = {5299DFED-DC4C-4A6E-81FE-3F2407117020}
+		{57F8E8BD-064B-4396-99D2-7B68DC30F9C9} = {5299DFED-DC4C-4A6E-81FE-3F2407117020}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4847251-0AD2-4459-964F-0B465551E41C}
