@@ -41,13 +41,12 @@ class Solution
     // Complete the minimumMoves function below.
     static int minimumMoves(int startX, int startY, int goalX, int goalY)
     {
-        var queue = new List<Position>();
-        queue.Add(new Position() { Row = startX, Col = startY });
+        var queue = new Queue<Position>();
+        queue.Enqueue(new Position() { Row = startX, Col = startY });
         var endPoint = new Position() { Row = goalX, Col = goalY };
         while (queue.Count > 0)
         {
-            var current = queue[0];
-            queue.RemoveAt(0);
+            var current = queue.Dequeue();
             Marked[current.Row, current.Col] = true;
             if (current == endPoint)
             {
@@ -61,20 +60,17 @@ class Solution
 
 
 
-    private static void AddNeighbors(List<Position> queue, Position current)
+    private static void AddNeighbors(Queue<Position> queue, Position current)
     {
         foreach (Position newPos in GetEmptyNeighbors(current))
         {
             Marked[newPos.Row, newPos.Col] = true;
-            queue.Add(newPos);
+            queue.Enqueue(newPos);
         }
     }
 
     private static IEnumerable<Position> GetEmptyNeighbors(Position current)
     {
-        foreach (Position pos in GetNearestEmptyNeighbors(current))
-            yield return pos;
-
         foreach (Position pos in GetEmptyNeighborsByDirection(current, true))
             yield return pos;
 
@@ -91,8 +87,11 @@ class Solution
         {
             if (rowDirection) ++pivot.Col;
             else ++pivot.Row;
-            if (pivot.Row >= 0 && pivot.Col >= 0 && pivot.Col < GridLength && pivot.Row < GridLength && Grid[pivot.Row][pivot.Col] != BLOCKED_CELL)
+            if (GoodCell(pivot))
+            {
                 yield return pivot;
+                pivot = pivot.Clone();
+            }
             else
                 flag = false;
         }
@@ -103,21 +102,13 @@ class Solution
         {
             if (rowDirection) --pivot.Col;
             else --pivot.Row;
-            if (pivot.Row >= 0 && pivot.Col >= 0 && pivot.Col < GridLength && pivot.Row < GridLength && Grid[pivot.Row][pivot.Col] != BLOCKED_CELL)
+            if (GoodCell(pivot))
+            {
                 yield return pivot;
+                pivot = pivot.Clone();
+            }
             else
                 flag = false;
-        }
-    }
-
-    private static IEnumerable<Position> GetNearestEmptyNeighbors(Position current)
-    {
-        for (int i = 0; i < movRows.Length; i++)
-        {
-            int movRow = movRows[i], movCol = movCols[i];
-            var newPos = new Position() { Row = current.Row + movRow, Col = current.Col + movCol, Steps = current.Steps + 1 };
-            if (GoodCell(newPos))
-                yield return newPos;
         }
     }
 
