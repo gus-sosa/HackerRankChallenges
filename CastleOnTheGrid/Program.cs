@@ -7,6 +7,8 @@ class Solution
 
   private static string[] Grid;
   private static bool[,] Marked;
+  private static int[,] BestSteps;
+  private static int[,] BestTurns;
   private static int GridLength;
   const int NUM_DIR = 4;
   private static readonly int[] movRows = new int[] { -1, 0, 1, 0 };
@@ -19,6 +21,7 @@ class Solution
     public int Col { get; set; }
     public Position Parent { get; set; }
     public int Steps { get; set; }
+    public int Turns { get; set; }
 
     public Position Clone() {
       return new Position()
@@ -37,69 +40,43 @@ class Solution
     }
   }
 
+  static Position target;
+  static int bestNumSteps = int.MaxValue;
+  static int bestNumTurns = int.MaxValue;
+
   // Complete the minimumMoves function below.
   static int minimumMoves(int startX, int startY, int goalX, int goalY) {
-    var queue = new Queue<Position>();
-    queue.Enqueue(new Position() { Row = startX, Col = startY });
-    Marked[startX, startY] = true;
-    var target = new Position() { Row = goalX, Col = goalY };
-    int bestPathDist = int.MaxValue;
-    int numBestSteps = int.MaxValue;
-    while (queue.Count > 0) {
-      var current = queue.Dequeue();
-      if (current.Steps > bestPathDist) {
-        continue;
-      }
-      if (Position.Equals(current, target)) {
-        bestPathDist = OptimzeSteps(current);
-        numBestSteps = current.Steps;
-        continue;
-      }
-      foreach (Position neighboor in GetNeighbors(current)) {
-        Marked[neighboor.Row, neighboor.Col] = true;
-        queue.Enqueue(neighboor);
-      }
-    }
-    return -1;
+    target = new Position() { Row = goalX, Col = goalY };
+    minimumMoves(new Position() { Row = startX, Col = startY });
+    return bestNumTurns;
   }
 
-  private static int OptimzeSteps(Position current) {
-    int steps = 0;
-    var startTurn = current;
-    while (startTurn.Parent != null) {
-      int dir = ChooseDirection(startTurn);
-      startTurn = GetEndTurn(startTurn, dir);
-      steps += 1;
-    }
-    return steps;
-  }
-
-  private static Position GetEndTurn(Position startTurn, int dir) {
-    var flag = true;
-    var endTurn = startTurn;
-    Position pivot;
-    while (flag) {
-      pivot = new Position() { Row = endTurn.Row + movRows[dir], Col = endTurn.Col + movCols[dir] };
-      flag = Position.Equals(endTurn.Parent, pivot);
-      if (flag) {
-        endTurn = endTurn.Parent;
+  private static void minimumMoves(Position position) {
+    if (position.Steps <= bestNumSteps && position.Turns <= bestNumTurns
+      && position.Steps <= BestSteps[position.Row, position.Col]
+      && position.Turns <= BestTurns[position.Row, position.Col]) {
+      BestSteps[position.Row, position.Col] = Math.Min(position.Steps, BestSteps[position.Row, position.Col]);
+      BestTurns[position.Row, position.Col] = Math.Min(position.Turns, BestTurns[position.Row, position.Col]);
+      if (Position.Equals(position, target)) {
+        bestNumSteps = Math.Min(position.Steps, bestNumSteps);
+        bestNumTurns = Math.Min(bestNumTurns, position.Turns);
+      } else {
+        Marked[position.Row, position.Col] = true;
+        foreach (var neighboor in GetNeighbors(position)) {
+          minimumMoves(neighboor);
+        }
+        Marked[position.Row, position.Col] = false;
       }
     }
-    return endTurn;
   }
 
-  private static int ChooseDirection(Position startTurn) {
-    int dir = 0;
-    for (Position pivot; dir < NUM_DIR; dir++) {
-      pivot = new Position() { Row = startTurn.Row + movRows[dir], Col = startTurn.Col + movCols[dir] };
-      if (Position.Equals(pivot, startTurn.Parent)) {
-        break;
-      }
+  private static void UpdatePath(Position position) {
+    while (position != null) {
+      BestTurns[position.Row, position.Col] = Math.Min(position.Turns, BestTurns[position.Row, position.Col]);
+      BestSteps[position.Row, position.Col] = Math.Min(position.Steps, BestSteps[position.Row, position.Col]);
+      position = position.Parent;
     }
-    return dir;
   }
-
-
 
   private static IEnumerable<Position> GetNeighbors(Position pos) {
     foreach (var dir in Enumerable.Zip<int, int, Tuple<int, int>>(movRows, movCols, (row, col) => Tuple.Create(row, col))) {
@@ -110,6 +87,7 @@ class Solution
         Steps = pos.Steps + 1,
         Parent = pos
       };
+      newPos.Turns = pos.Parent == null ? 1 : (Position.Equals(pos, new Position() { Row = pos.Parent.Row + dir.Item1, Col = pos.Parent.Col + dir.Item2 }) ? pos.Turns : pos.Turns + 1);
       if (newPos.Row >= 0 && newPos.Col >= 0 && newPos.Row < GridLength && newPos.Col < GridLength && !Marked[newPos.Row, newPos.Col])
         yield return newPos;
     }
@@ -148,6 +126,13 @@ class Solution
     Grid = grid;
     GridLength = grid.Length;
     Marked = new bool[GridLength, GridLength];
+    BestSteps = new int[GridLength, GridLength];
+    BestTurns = new int[GridLength, GridLength];
+    for (int i = 0; i < GridLength; i++) {
+      for (int j = 0; j < GridLength; j++) {
+        BestSteps[i, j] = BestTurns[i, j] = int.MaxValue;
+      }
+    }
     MarkBlockedCells();
 
     int result = minimumMoves(startX, startY, goalX, goalY);
