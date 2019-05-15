@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Solution
 {
@@ -11,11 +12,11 @@ class Solution
     private static readonly int[] movCols = new int[] { 0, 1, 1, 1, 0, -1, -1, -1 };
     private const char BLOCKED_CELL = 'X';
 
-    struct Position
+    class Position
     {
         public int Row { get; set; }
         public int Col { get; set; }
-        public int Steps { get; set; }
+        public Position Parent { get; set; }
 
         public Position Clone()
         {
@@ -23,7 +24,6 @@ class Solution
             {
                 Row = this.Row,
                 Col = this.Col,
-                Steps = this.Steps
             };
         }
 
@@ -43,78 +43,57 @@ class Solution
     {
         var queue = new Queue<Position>();
         queue.Enqueue(new Position() { Row = startX, Col = startY });
-        var endPoint = new Position() { Row = goalX, Col = goalY };
+        var target = new Position() { Row = goalX, Col = goalY };
         while (queue.Count > 0)
         {
             var current = queue.Dequeue();
             Marked[current.Row, current.Col] = true;
-            if (current == endPoint)
-            {
-                return current.Steps;
-            }
+            if (current == target)
+                return OptimzeSteps(current);
 
-            AddNeighbors(queue, current);
+            foreach (Position neighboor in GetNeighbors(current))
+            {
+                Marked[neighboor.Row, neighboor.Col] = true;
+                queue.Enqueue(neighboor);
+            }
         }
+
         return -1;
     }
 
-
-
-    private static void AddNeighbors(Queue<Position> queue, Position current)
+    private static int OptimzeSteps(Position current)
     {
-        foreach (Position newPos in GetEmptyNeighbors(current))
+        int steps = 0;
+        var startTurn = current;
+        while (startTurn.Parent != null)
         {
-            Marked[newPos.Row, newPos.Col] = true;
-            queue.Enqueue(newPos);
+            var endTurn = startTurn;
+            while ((startTurn.Row == endTurn.Row && endTurn.Parent != null)
+                || (startTurn.Col == endTurn.Col && endTurn.Parent != null))
+                endTurn = endTurn.Parent;
+
+            steps += 1;
+            startTurn = endTurn;
         }
+        return steps;
     }
 
-    private static IEnumerable<Position> GetEmptyNeighbors(Position current)
-    {
-        foreach (Position pos in GetEmptyNeighborsByDirection(current, true))
-            yield return pos;
+    static int[] _rowDirection = new int[] { -1, -1, 0, 1, 1, 1, 0, -1 };
+    static int[] _colDirection = new int[] { 0, 1, 1, 1, 0, -1, -1, -1 };
 
-        foreach (Position pos in GetEmptyNeighborsByDirection(current, false))
-            yield return pos;
-    }
-
-    private static IEnumerable<Position> GetEmptyNeighborsByDirection(Position position, bool rowDirection)
+    private static IEnumerable<Position> GetNeighbors(Position pos)
     {
-        var pivot = position.Clone();
-        ++pivot.Steps;
-        bool flag = true;
-        while (flag)
+        foreach (var dir in Enumerable.Zip<int, int, Tuple<int, int>>(_rowDirection, _colDirection, (row, col) => Tuple.Create(row, col)))
         {
-            if (rowDirection) ++pivot.Col;
-            else ++pivot.Row;
-            if (GoodCell(pivot))
+            var newPos = new Position()
             {
-                yield return pivot;
-                pivot = pivot.Clone();
-            }
-            else
-                flag = false;
+                Row = pos.Row + dir.Item1,
+                Col = pos.Col + dir.Item2,
+                Parent = pos
+            };
+            if (newPos.Row >= 0 && newPos.Col >= 0 && newPos.Row < GridLength && newPos.Col < GridLength && !Marked[newPos.Row, newPos.Col])
+                yield return newPos;
         }
-        pivot = position.Clone();
-        ++pivot.Steps;
-        flag = true;
-        while (flag)
-        {
-            if (rowDirection) --pivot.Col;
-            else --pivot.Row;
-            if (GoodCell(pivot))
-            {
-                yield return pivot;
-                pivot = pivot.Clone();
-            }
-            else
-                flag = false;
-        }
-    }
-
-    private static bool GoodCell(Position position)
-    {
-        return position.Row >= 0 && position.Col >= 0 && position.Col < GridLength && position.Row < GridLength && !Marked[position.Row, position.Col];
     }
 
     private static void MarkBlockedCells()
