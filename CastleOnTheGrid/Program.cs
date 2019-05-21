@@ -98,6 +98,7 @@ class Solution
       for (int j = 0; j < GridLength; j++) {
         if (Grid[i][j] == BLOCKED_CELL) {
           Marked[i, j] = true;
+          BestSteps[i, j] = BestTurns[i, j] = int.MaxValue;
         }
       }
     }
@@ -128,11 +129,6 @@ class Solution
     Marked = new bool[GridLength, GridLength];
     BestSteps = new int[GridLength, GridLength];
     BestTurns = new int[GridLength, GridLength];
-    for (int i = 0; i < GridLength; i++) {
-      for (int j = 0; j < GridLength; j++) {
-        BestSteps[i, j] = BestTurns[i, j] = int.MaxValue;
-      }
-    }
     MarkBlockedCells();
 
     int result = minimumMoves(startX, startY, goalX, goalY);
