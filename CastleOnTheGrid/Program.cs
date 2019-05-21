@@ -4,13 +4,11 @@ using System.Linq;
 
 class Solution
 {
-
   private static string[] Grid;
   private static bool[,] Marked;
   private static int[,] BestSteps;
   private static int[,] BestTurns;
   private static int GridLength;
-  const int NUM_DIR = 4;
   private static readonly int[] movRows = new int[] { -1, 0, 1, 0 };
   private static readonly int[] movCols = new int[] { 0, 1, 0, -1 };
   private const char BLOCKED_CELL = 'X';
@@ -41,26 +39,20 @@ class Solution
   }
 
   static Position target;
-  static int bestNumSteps = int.MaxValue;
-  static int bestNumTurns = int.MaxValue;
 
   // Complete the minimumMoves function below.
   static int minimumMoves(int startX, int startY, int goalX, int goalY) {
     target = new Position() { Row = goalX, Col = goalY };
     minimumMoves(new Position() { Row = startX, Col = startY });
-    return bestNumTurns;
+    return BestTurns[goalX, goalY];
   }
 
   private static void minimumMoves(Position position) {
-    if (position.Steps <= bestNumSteps && position.Turns <= bestNumTurns
-      && position.Steps <= BestSteps[position.Row, position.Col]
+    if (position.Steps <= BestSteps[position.Row, position.Col]
       && position.Turns <= BestTurns[position.Row, position.Col]) {
-      BestSteps[position.Row, position.Col] = Math.Min(position.Steps, BestSteps[position.Row, position.Col]);
-      BestTurns[position.Row, position.Col] = Math.Min(position.Turns, BestTurns[position.Row, position.Col]);
-      if (Position.Equals(position, target)) {
-        bestNumSteps = Math.Min(position.Steps, bestNumSteps);
-        bestNumTurns = Math.Min(bestNumTurns, position.Turns);
-      } else {
+      BestSteps[position.Row, position.Col] = position.Steps;
+      BestTurns[position.Row, position.Col] = position.Turns;
+      if (!Position.Equals(position, target)) {
         Marked[position.Row, position.Col] = true;
         foreach (var neighboor in GetNeighbors(position)) {
           minimumMoves(neighboor);
@@ -80,7 +72,8 @@ class Solution
         Parent = pos
       };
       newPos.Turns = pos.Parent == null ? 1 : (Position.Equals(pos, new Position() { Row = pos.Parent.Row + dir.Item1, Col = pos.Parent.Col + dir.Item2 }) ? pos.Turns : pos.Turns + 1);
-      if (newPos.Row >= 0 && newPos.Col >= 0 && newPos.Row < GridLength && newPos.Col < GridLength && !Marked[newPos.Row, newPos.Col])
+      if (newPos.Row >= 0 && newPos.Col >= 0 && newPos.Row < GridLength && newPos.Col < GridLength && !Marked[newPos.Row, newPos.Col]
+        && newPos.Turns <= BestTurns[newPos.Row, newPos.Col] && newPos.Steps <= BestSteps[newPos.Row, newPos.Col])
         yield return newPos;
     }
   }
@@ -90,8 +83,8 @@ class Solution
       for (int j = 0; j < GridLength; j++) {
         if (Grid[i][j] == BLOCKED_CELL) {
           Marked[i, j] = true;
-          BestSteps[i, j] = BestTurns[i, j] = int.MaxValue;
         }
+        BestSteps[i, j] = BestTurns[i, j] = int.MaxValue;
       }
     }
   }
