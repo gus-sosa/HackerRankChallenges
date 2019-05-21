@@ -70,14 +70,6 @@ class Solution
     }
   }
 
-  private static void UpdatePath(Position position) {
-    while (position != null) {
-      BestTurns[position.Row, position.Col] = Math.Min(position.Turns, BestTurns[position.Row, position.Col]);
-      BestSteps[position.Row, position.Col] = Math.Min(position.Steps, BestSteps[position.Row, position.Col]);
-      position = position.Parent;
-    }
-  }
-
   private static IEnumerable<Position> GetNeighbors(Position pos) {
     foreach (var dir in Enumerable.Zip<int, int, Tuple<int, int>>(movRows, movCols, (row, col) => Tuple.Create(row, col))) {
       var newPos = new Position()
