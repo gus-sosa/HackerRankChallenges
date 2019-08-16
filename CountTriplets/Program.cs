@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 class Solution
 {
   // Complete the countTriplets function below.
   static long countTriplets(long[] arr, long ratio) {
-    //Debugger.Launch();
     Dictionary<long, long> js = new Dictionary<long, long>(), ks = new Dictionary<long, long>();
     long count = 0;
 
