@@ -3,16 +3,15 @@ using System.Linq;
 using System;
 using System.Diagnostics;
 
-class Solution
-{
+class Solution {
   static Dictionary<int, int> numFreq = new Dictionary<int, int>();
   static Dictionary<int, int> freqNum = new Dictionary<int, int>();
 
   // Complete the freqQuery function below.
   static List<int> freqQuery(List<List<int>> queries) {
     var result = new List<int>();
-    Debugger.Launch();
-    int oper = 0;
+    //Debugger.Launch();
+    //int oper = 0;
     foreach (List<int> query in queries) {
       int operation = query[0];
       int data = query[1];
@@ -24,10 +23,10 @@ class Solution
           Delete(data);
           break;
         case 3:
-          ++oper;
-          if (oper == 1422) {
-            Debugger.Break();
-          }
+          //++oper;
+          //if (oper == 1423) {
+          //  Debugger.Break();
+          //}
           result.Add(Check(data));
           break;
         default:
@@ -43,46 +42,44 @@ class Solution
 
   private static void Delete(int data) {
     if (numFreq.ContainsKey(data)) {
-      int freq = numFreq[data];
-      if (freq == 1) {
+      int originalFreq = numFreq[data];
+      numFreq[data] -= 1;
+      if (numFreq[data] == 0) {
         numFreq.Remove(data);
       } else {
-        numFreq[data] -= 1;
+        UpdateFrequency(numFreq[data], 1);
       }
-      if (freqNum.ContainsKey(freq)) {
-        if (freqNum[freq] == 1) {
-          freqNum.Remove(freq);
-        } else {
-          freqNum[freq] -= 1;
-          if (!freqNum.ContainsKey(freq - 1)) {
-            freqNum[freq - 1] = 1;
-          } else {
-            freqNum[freq - 1] += 1;
-          }
-        }
-      }
+      UpdateFrequency(originalFreq, -1);
     }
   }
 
   private static void Insert(int data) {
-    bool hasPreviousFreq = false;
-    if (!numFreq.ContainsKey(data)) {
-      numFreq[data] = 1;
-    } else {
-      hasPreviousFreq = true;
+    if (numFreq.ContainsKey(data)) {
+      int originalFreq = numFreq[data];
       numFreq[data] += 1;
-    }
-    int freq = numFreq[data];
-    if (!freqNum.ContainsKey(freq)) {
-      freqNum[freq] = 1;
+      UpdateFrequency(numFreq[data], 1);
+      UpdateFrequency(originalFreq, -1);
     } else {
-      freqNum[freq] += 1;
+      numFreq[data] = 1;
+      UpdateFrequency(1, 1);
     }
-    if (hasPreviousFreq && freqNum.ContainsKey(freq - 1)) {
-      freqNum[freq - 1] -= 1;
-      if (freqNum[freq - 1] == 0) {
-        freqNum.Remove(freq - 1);
+  }
+
+  private static void UpdateFrequency(int freq, int incr) {
+    if (freqNum.ContainsKey(freq)) {
+      int newFreq = freqNum[freq] + incr;
+      if (newFreq < 0) {
+        throw new ApplicationException();
+      } else if (newFreq == 0) {
+        freqNum.Remove(freq);
+      } else {
+        freqNum[freq] = newFreq;
       }
+    } else {
+      if (incr < 1) {
+        throw new ApplicationException();
+      }
+      freqNum[freq] = incr;
     }
   }
 
